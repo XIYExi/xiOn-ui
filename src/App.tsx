@@ -13,7 +13,7 @@ const App:React.FC = () => {
 
     return(
         <>
-            {/*<Switch onChange={(e)=>console.log(e)}/>*/}
+            <Switch onChange={(e)=>console.log(e)}/>
 
         </>
     )

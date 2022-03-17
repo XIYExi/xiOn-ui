@@ -1,0 +1,99 @@
+.xiOn-checkBox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: $checkbox-margin-right;
+  position: relative;
+  margin-left: $checkbox-margin-right;
+
+  .xiOn-checkBox-input[type="checkbox"]{
+    display: inline-block;
+    border: .03rem solid #0D1529;
+    border-radius: 0.2rem;
+    width: 1em;
+    height: 1rem;
+    margin: auto;
+    color: #0D1529;
+    top: 0;
+    -webkit-appearance: none;
+    &:hover{
+      border-color: $primary;
+    }
+  }
+
+  label {
+    padding-left: $checkbox-margin-left;
+    vertical-align: middle;
+    margin: auto;//自动margin使label和checkbox对齐
+    font-size: $font-size-sm;
+    color: $gray-700;
+    font-weight: $font-weight-light;
+    cursor: pointer;
+  }
+
+  label:after{
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 7px;
+    left: 4px;
+    border: 3px solid white;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+ /* label:hover::after {
+    opacity: 0.5;
+  }*/
+
+  input[type=checkbox]:checked + label:after {
+    opacity: 1;
+  }
+
+  input[type=checkbox]:checked{
+    background: $primary;
+    border: none;
+    animation: checkboxEffect 0.36s ease-in-out;
+    animation-fill-mode: backwards;
+    content: '';
+  }
+
+  &.xiOn-checkBox-disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+    input {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    label {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+}
+
+@keyframes checkboxEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+
+

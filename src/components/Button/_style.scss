@@ -1,0 +1,105 @@
+.btn{
+  position: relative;
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size);
+
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  box-shadow: $btn-box-shadow;
+  cursor: pointer;
+  transition: $btn-transition;
+
+  &.disabled,&[disabled]{
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+    box-shadow: none;
+    > * {
+      pointer-events: none;
+    }
+  }
+
+  &.block,&[block]{
+    width: 100%;
+  }
+
+  &.ghost,&[ghost]{
+    background: rgba(255, 255, 255, 0.7);
+    opacity: $btn-disabled-opacity;
+    font-weight: $font-weight-normal;
+    color: $gray-600;
+  }
+}
+
+/*shape*/
+.btn-type-default{
+  border-radius: 0;
+}
+
+.btn-type-circle{
+  border-radius: 15em;
+}
+
+.btn-type-round{
+  border-radius: $border-radius;
+}
+
+/*size*/
+.btn-lg{
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg);
+}
+
+.btn-sm{
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm);
+}
+
+.btn-md{
+  @include button-size($btn-padding-y-md, $btn-padding-x-md, $btn-font-size-md);
+}
+
+/*type*/
+.btn-primary{
+  @include button-style($primary, $primary, $white);
+}
+
+.btn-danger{
+  @include button-style($danger, $danger, $white);
+}
+
+.btn-default{
+  @include button-style($white, $gray-400, $border-color, $white, $primary, $primary);
+}
+
+.btn-link{
+  font-weight: $font-weight-normal;
+  color: $btn-link-color;
+  text-decoration: $link-decoration;
+  box-shadow: none;
+  &:hover{
+    color: $btn-link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+  &:focus, &.focus{
+    text-decoration: $link-hover-decoration;
+    box-shadow: none;
+  }
+  &:disabled,&.disabled{
+    color: $btn-link-hover-color;
+    box-shadow: none;
+  }
+
+}
+
+.btn-dashed{
+  @include button-style($white, $gray-400, $gray-600, $white, $primary, $primary);
+  border-style: dashed;
+}
+
+

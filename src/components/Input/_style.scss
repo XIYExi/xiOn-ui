@@ -1,0 +1,174 @@
+.xiOn-input-wrapper{
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+
+  .xiOn-input-container{
+    position: relative;
+    justify-content: center;
+    color: $input-color;
+    right: 0;
+    top: 0;
+
+    svg{
+      color: $primary;
+      opacity: 0.5;
+    }
+
+    .xiOn-input, .xiOn-textarea{
+      width: 100%;
+      height: 100%;
+      padding: $input-padding-y $input-padding-x;
+      font-family: $input-font-family;
+      font-weight: $input-font-weight;
+      font-size: $input-font-size;
+      line-height: $input-line-height;
+      color: $input-color;
+      background-color: $input-bg;
+      background-clip: padding-box;
+      border: $input-border-width solid $input-border-color;
+      border-radius: $input-border-radius;
+      box-shadow: $input-box-shadow;
+      transition: $input-transition;
+
+      &:focus,
+      &:hover{
+        color: $input-focus-color;
+        background-color: $input-focus-bg;
+        border-color: $input-focus-border-color;
+        outline: 0;
+        box-shadow: $input-focus-box-shadow;
+      }
+
+      &::placeholder{
+        color: $input-placeholder-color;
+        opacity: 1;
+      }
+
+      &:disabled,&[readonly]{
+        background-color: $primary;
+        border-color: $input-disabled-border-color;
+        opacity: 0.5;
+        //pointer-events: none;
+        cursor: not-allowed;
+      }
+
+    }
+  }
+
+  .before-addon{
+    display: inline-flex;
+    align-items: center;
+    padding: $input-padding-y $input-padding-x;
+    margin-bottom: 0; // Allow use of <label> elements by overriding our default margin-bottom
+    font-size: $input-font-size; // Match inputs
+    font-weight: $font-weight-normal;
+    line-height: $input-line-height;
+    color: $input-group-addon-color;
+    text-align: center;
+    white-space: nowrap;
+    background-color: $input-group-addon-bg;
+    border: $input-border-width solid $input-group-addon-border-color;
+    border-radius: $input-border-radius;
+  }
+
+  .after-addon {
+    display: inline-flex;
+    align-items: center;
+    padding: $input-padding-y $input-padding-x;
+    margin-bottom: 0; // Allow use of <label> elements by overriding our default margin-bottom
+    font-size: $input-font-size; // Match inputs
+    font-weight: $font-weight-normal;
+    line-height: $input-line-height;
+    color: $input-group-addon-color;
+    text-align: center;
+    white-space: nowrap;
+    background-color: $input-group-addon-bg;
+    border: $input-border-width solid $input-group-addon-border-color;
+    border-radius: $input-border-radius;
+  }
+
+  .xiOn-input-close {
+    display: inline-flex;
+    width: 14px;
+    height: 14px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  &.is_bordered{
+    box-shadow: none;
+    border: none;
+    //background-color: #1ea7fd;
+    >*{
+      box-shadow: none;
+      border: none;
+    }
+    .xiOn-input,.xiOn-textarea{
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  &.closeable{
+    .xiOn-input-container{
+      .xiOn-input{
+        padding-right: 20px !important;
+      }
+    }
+  }
+
+  &.has-before-addon {
+    .xiOn-input-container {
+      .xiOn-input {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  &.has-after-addon {
+    .xiOn-input-container {
+      .xiOn-input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  &.input-lg{
+    .after-addon,.before-addon,.xiOn-input{
+      padding: $input-padding-y-lg $input-padding-x-lg;
+      font-size: $input-font-size-lg;
+      border-radius: $input-border-radius-lg;
+    }
+  }
+
+  &.input-sm{
+    .after-addon,.before-addon,.xiOn-input {
+      padding: $input-padding-y-sm $input-padding-x-sm;
+      font-size: $input-font-size-sm;
+      border-radius: $input-border-radius-sm;
+    }
+  }
+
+  &.input-md {
+    .after-addon,.before-addon,.xiOn-input{
+      padding: $input-padding-y-md $input-padding-x-md;
+      font-size: $input-font-size-md;
+      border-radius: $input-border-radius-md;
+    }
+  }
+
+}
+
+
+
+
+

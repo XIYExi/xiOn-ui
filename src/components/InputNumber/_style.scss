@@ -1,0 +1,212 @@
+.input-number{
+  display: flex;
+  margin: 5px;
+  box-sizing: border-box;
+
+  .input-number-input-wrap{
+    border-style: none;
+    width: 100%;
+    height: 100%;
+    padding: $input-padding-y $input-padding-x;
+    font-family: $input-font-family;
+    font-weight: $input-font-weight;
+    font-size: $input-font-size;
+    line-height: $input-line-height;
+    color: $input-color;
+    background-color: $input-bg;
+    background-clip: padding-box;
+    transition: $input-transition;
+
+    &:focus{
+      outline: none;
+    }
+
+  }
+
+  .input-number-up{
+    display: inline-flex;
+    align-items: center;
+    padding: $input-padding-y $input-padding-x;
+    font-size: $input-font-size-sm;
+    background-color: $gray-100;
+
+    border: $input-border-width solid $input-border-color;
+    border-left: none;
+    border-top-right-radius: $input-border-radius;
+    border-bottom-right-radius: $input-border-radius;
+    outline: none;
+    transition: $input-number-btn-transition;
+
+    &:hover{
+      color: $input-focus-color;
+      background-color: rgba($primary,0.5);
+      border-color: $input-focus-border-color;
+      box-shadow: $input-focus-box-shadow;
+      border-radius: $input-border-radius;
+    }
+  }
+
+  .input-number-down{
+    display: inline-flex;
+    align-items: center;
+    padding: $input-padding-y $input-padding-x;
+    font-size: $input-font-size-sm;
+    background-color: $gray-100;
+
+    border-top-left-radius: $input-border-radius;
+    border-bottom-left-radius: $input-border-radius;
+    border: $input-border-width solid $input-border-color;
+    border-right: none;
+    outline: none;
+    transition: $input-number-btn-transition;
+
+    &:hover{
+      color: $input-focus-color;
+      background-color: rgba($primary,0.5);
+      border-color: $input-focus-border-color;
+      box-shadow: $input-focus-box-shadow;
+      border-radius: $input-border-radius;
+    }
+  }
+
+  .inner-wrapper{
+    display: flex;
+    //border: $input-border-width solid $input-border-color;
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    .input-number-addBefore{
+      display: inline-flex;
+      align-items: center;
+      white-space:nowrap;
+    }
+
+    .input-number-addAfter{
+      display: inline-flex;
+      align-items: center;
+      white-space:nowrap;
+    }
+
+    &:hover,&:focus{
+      color: $input-focus-color;
+      background-color: $input-focus-bg;
+      border-color: $input-focus-border-color;
+      outline: 0;
+      box-shadow: $input-focus-box-shadow;
+      border-radius: $input-border-radius;
+    }
+  }
+
+}
+
+.is-disabled{
+
+  cursor: not-allowed;
+  .input-number-up,
+  .inner-wrapper,
+  .input-number-input-wrap,
+  .input-number-down{
+    //cursor: not-allowed;
+    pointer-events: none;
+    background-color: $gray-300;
+    box-shadow: none;
+  }
+
+}
+
+.is-bordered{
+  .input-number-up,
+  .input-number-input-wrap,
+  .input-number-down{
+    border: none;
+  }
+}
+
+.input-large{
+  height: 40px;
+  .input-number-up,.input-number-down{
+    height: 40px;
+  }
+}
+
+.input-normal{
+  height: 32px;
+  .input-number-up,.input-number-down{
+    height: 32px;
+  }
+}
+
+.input-small{
+  height: 24px;
+  .input-number-up,.input-number-down{
+    height: 100%;
+  }
+}
+
+.input-theme-default{
+  .inner-wrapper{
+    border: $input-border-width solid $input-border-color;
+  }
+
+}
+
+.input-theme-primary{
+  .input-number-up{
+    border: $input-border-width solid $primary;
+    border-left: none;
+  }
+  .inner-wrapper{
+    border: $input-border-width solid $primary;
+  }
+
+  .input-number-down{
+    border: $input-border-width solid $primary;
+    border-right: none;
+  }
+}
+
+.input-theme-warning{
+  .input-number-up{
+    border: $input-border-width solid $orange;
+    border-left: none;
+  }
+  .inner-wrapper{
+    border: $input-border-width solid $orange;
+  }
+
+  .input-number-down{
+    border: $input-border-width solid $orange;
+    border-right: none;
+  }
+}
+
+.input-theme-error{
+  .input-number-up{
+    border: $input-border-width solid $red;
+    border-left: none;
+  }
+  .inner-wrapper{
+    border: $input-border-width solid $red;
+  }
+
+  .input-number-down{
+    border: $input-border-width solid $red;
+    border-right: none;
+  }
+}
+
+.input-theme-info{
+  .input-number-up{
+    border: $input-border-width solid $teal;
+    border-left: none;
+  }
+  .inner-wrapper{
+    border: $input-border-width solid $teal;
+  }
+
+  .input-number-down{
+    border: $input-border-width solid $teal;
+    border-right: none;
+  }
+}

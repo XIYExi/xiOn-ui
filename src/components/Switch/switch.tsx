@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from "react";
 import classNames from 'classnames';
-import Input from "../Input/input";
 
 export interface BaseSwitchProps{
 
     type?: 'toggle' | 'slider' | 'text';
+
+    checkedText?:string;
+
+    unCheckedText?:string;
 
     /** 默认选择 */
     defaultChecked?: boolean;
@@ -26,7 +29,7 @@ export interface BaseSwitchProps{
     style?: React.CSSProperties
 }
 
-const Switch:React.FC<BaseSwitchProps> = (props) => {
+export const Switch:React.FC<BaseSwitchProps> = (props) => {
 
     const {
         type,
@@ -37,6 +40,8 @@ const Switch:React.FC<BaseSwitchProps> = (props) => {
         onChange,
         style,
         className ,
+        checkedText,
+        unCheckedText,
         ...restProps
     } = props;
 
@@ -53,11 +58,8 @@ const Switch:React.FC<BaseSwitchProps> = (props) => {
         onChange && onChange(!value, e)
     }
 
-
     const classes = classNames('xiOn-switch' ,className, {
-
-        "toggle": type==='toggle',
-        "text": type==='text',
+        "toggle": type==='toggle'||type==='text',
         "slider": type==='slider',
         [`xiOn-switch-${size}`]: size,
         "xiOn-checked": value,
@@ -69,6 +71,10 @@ const Switch:React.FC<BaseSwitchProps> = (props) => {
         <>
             <div className={classes} style={style} {...restProps}>
                 <input className='xiOn-switch-input' type='checkbox' defaultChecked={defaultChecked} id='1' onClick={handleClick}/>
+                {
+                    type==='text'?
+                        <span className='xiOn-switch-text-span'>{value?checkedText:unCheckedText}</span>:null
+                }
                 <label htmlFor='1'/>
             </div>
         </>
@@ -82,4 +88,3 @@ Switch.defaultProps={
     type: "toggle",
 }
 
-export default Switch;

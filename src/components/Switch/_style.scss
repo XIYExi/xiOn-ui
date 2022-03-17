@@ -1,10 +1,7 @@
 
-.xiOn-switch{
-
-}
-
-
 .toggle{
+  position: relative;
+  
   .xiOn-switch-input{
     width: 60px;
     height: 30px;
@@ -12,29 +9,125 @@
     -webkit-appearance: none;
     user-select: none;
     outline: none;
-    background-color: #e0e0e0;
+    background-color: #F0F0F0;
     box-shadow: #c2c2c2 0 0 0 0 inset;
     position: relative;
     transition:0.4s;
   }
-  .xiOn-switch-input:before{
+
+  .xiOn-switch-input::before{
     content: '';
     width: 28px;
     height: 28px;
     border-radius: 100%;
-    background-color: #fff;
+    background-color: $primary;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left:0;
+    top:1px;
+    transition:0.3s;
+    z-index: 20;
+  }
+
+  .xiOn-switch-input:checked{
+    border-color: $primary;
+    box-shadow: $primary 0 0 0 14px inset;
+    background-color: $primary;
+
+  }
+
+  .xiOn-switch-input:checked::before{
+    left:32px;
+    background-color: white;
+    animation: switchToggerEffect 0.36s ease-in;
+    animation-fill-mode: backwards;
+    content: '';
+  }
+
+  .xiOn-switch-text-span{
+    position: absolute;
+    left: 30px;
+    user-select:none;
+    pointer-events: none;
+    animation: switchTextEffectOut 0.36s ease-in;
+    animation-fill-mode: backwards;
+    z-index: 10;
+  }
+
+  .xiOn-switch-input:checked+.xiOn-switch-text-span{
+    left: 5px;
+    animation: switchTextEffectIn 0.36s ease-in;
+    animation-fill-mode: backwards;
+  }
+
+}
+
+.slider{
+
+  position: relative;
+  .xiOn-switch-input{
+    width: 60px;
+    height: 30px;
+    -webkit-appearance: none;
+    user-select: none;
+    outline: none;
+    transition:0.4s;
+    position: relative;
+  }
+  .xiOn-switch-input::before{
+    display: block;
+    content: '';
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    background-color: $primary;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     position: absolute;
     left:0;
     top:1px;
     transition:0.3s;
   }
-  .xiOn-switch-input:checked{
-    border-color: #81d480;
-    box-shadow: #83e482 0 0 0 14px inset;
-    background-color: #81d480;
+
+  .xiOn-switch-input:hover::before{
+    animation: switchSliderEffect 0.5s ease-in-out;
+    animation-fill-mode: backwards;
+    content: '';
   }
-  .xiOn-switch-input:checked:before{
-    left:32px;
+
+  .xiOn-switch-input:checked::before{
+    left:60px;
   }
+
+  label{
+
+
+
+  }
+
+}
+
+.slider::before{
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  height: 2px;
+  width: 60px;
+  z-index: -1;
+  background: $gray-400;
+  content: '';
+}
+
+.xiOn-disabled{
+
+  cursor: not-allowed;
+  opacity: 0.4;
+  input {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  label {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
 }

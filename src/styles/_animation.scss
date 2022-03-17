@@ -4,3 +4,56 @@
 @include zoom-animation('right', scale(0.45,0.45), scale(1,1), top right);
 @include zoom-animation('bottom', scaleY(0), scaleY(1), center buttom);
 
+//checkbox
+@keyframes checkboxEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+//switch
+@keyframes switchToggerEffect {
+  0% {
+    background-color: $primary;
+  }
+
+  100% {
+    background-color: $white;
+  }
+}
+@keyframes switchSliderEffect {
+  0% {
+    box-shadow: 0 1px 3px rgba($primary, 0.5)
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba($primary, 0.1)
+  }
+
+}
+@keyframes switchTextEffectIn {
+  0% {
+    left: 15px;
+  }
+
+  100% {
+    left: 5px;
+  }
+
+}
+@keyframes switchTextEffectOut {
+  0% {
+    left: 15px;
+  }
+
+  100% {
+    left: 30px;
+  }
+
+}

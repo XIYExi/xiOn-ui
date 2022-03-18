@@ -1,0 +1,27 @@
+.xiOn-radio {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
+  label {
+    display: inline-flex;
+    padding-left: 10px;
+    margin: auto;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-light;
+    color: $gray-700;
+  }
+  &.xiOn-radio-disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+    input {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    label {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+}

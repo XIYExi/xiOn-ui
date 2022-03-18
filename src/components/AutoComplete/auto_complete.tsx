@@ -6,7 +6,6 @@ import useDebounce from "../../hooks/useDebounce";
 import useClickOutside from "../../hooks/useClickOutside";
 import Animator from "../Animator/animator";
 import {SizeProp} from "@fortawesome/fontawesome-svg-core";
-import exp from "constants";
 
 interface DataSourceObject{
     value:string;

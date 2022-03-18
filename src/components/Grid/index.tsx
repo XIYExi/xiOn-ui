@@ -1,1 +1,4 @@
-export {default as Grid} from './grid'
+import Col from "./col";
+import Row from './row';
+
+export {Col, Row};

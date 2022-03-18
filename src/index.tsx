@@ -1,15 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import './styles/index.scss';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+library.add(fas)
 
-ReactDOM.render(
-    <App />,
-  document.getElementById('root')
-);
+export {default as Alert} from './components/Alert/index';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export {default as Animator} from './components/Animator/index';
+
+export {default as AutoComplete} from './components/AutoComplete/index';
+
+export {default as Button} from './components/Button/index';
+
+export {CheckBox, CheckBoxGroup} from './components/CheckBox/index';
+
+export {default as Divider} from './components/Divider/index';
+
+export {Col, Row} from './components/Grid/index';
+
+export {default as Icon} from './components/Icon/index';
+
+export {default as Input} from './components/Input/index';
+
+export {default as InputNumber} from './components/InputNumber/index';
+
+export {Layout, Header, Content, Footer, Sider} from './components/Layout/index';
+
+export {default as Menu} from './components/Menu/index';
+
+export {default as Progress} from './components/Progress/index';
+
+export {Radio, RadioGroup} from './components/Radio/index';
+
+export {default as Space} from './components/Space/index';
+
+export {default as Switch} from './components/Switch/index';
+
+export {default as Spin} from './components/Spin/index';
+
+export {default as Upload} from './components/Upload/index';
+

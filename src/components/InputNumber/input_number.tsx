@@ -153,7 +153,7 @@ const InputNumber:React.FC<BaseInputNumberProps> = (props) => {
                         <div className='input-number-addBefore'>{addBefore}</div>
 
                     }
-                    <input placeholder={defaultValue as (string|undefined)}
+                    <input placeholder={String(defaultValue)}
                            disabled={disabled}
                            className='input-number-input-wrap'
                            value={count}

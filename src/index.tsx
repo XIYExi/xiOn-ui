@@ -1,5 +1,10 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+
+
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 import './styles/index.scss';
 library.add(fas)
 
@@ -27,6 +32,8 @@ export {Layout, Header, Content, Footer, Sider} from './components/Layout/index'
 
 export {default as Menu} from './components/Menu/index';
 
+export {default as Message} from './components/Message/index';
+
 export {default as Progress} from './components/Progress/index';
 
 export {Radio, RadioGroup} from './components/Radio/index';
@@ -38,4 +45,8 @@ export {default as Switch} from './components/Switch/index';
 export {default as Spin} from './components/Spin/index';
 
 export {default as Upload} from './components/Upload/index';
+
+
+ReactDOM.render(<App/>, document.getElementById('root'));
+
 

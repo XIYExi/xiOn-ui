@@ -1,7 +1,6 @@
 import React from "react";
 import {fireEvent, render} from "@testing-library/react";
 import Button from "./button";
-import exp from "constants";
 
 const defaultProps = {
     onClick: jest.fn()
@@ -10,6 +9,7 @@ const defaultProps = {
 describe('test Button component', ()=>{
     it('should render the correct default button',()=>{
         const wrapper = render(<Button {...defaultProps}>Click Me</Button>);
+        expect(wrapper).toBeInTheDocument();
         const element = wrapper.getByText("Click Me");
         expect(element).toBeInTheDocument();
         expect(element.tagName).toEqual('BUTTON');

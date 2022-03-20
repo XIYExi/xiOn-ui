@@ -1,0 +1,59 @@
+
+#lole-message-wrapper {
+  position: fixed;
+  top: 5px;
+  z-index: $message-zIndex;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.lole-message {
+  text-align: center;
+  margin-bottom: 10px;
+  .toast_main {
+    display: inline-flex;
+    box-shadow: $message-box-shadow;
+    pointer-events: all;
+    background: #fff;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    animation: fadeIn linear 200ms;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100px;
+    .main_left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+      }
+      .content {
+        margin: auto;
+      }
+    }
+    .main_right {
+      margin-left: 5px;
+      .close {
+        margin-top: 7px;
+        cursor: pointer;
+        .lole-icon {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+  }
+
+  &.hiddenMessage {
+    & .toast_main {
+      animation: fadeOut linear 250ms;
+    }
+  }
+}
+
+

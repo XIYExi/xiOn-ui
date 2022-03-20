@@ -71,3 +71,11 @@
   border-top-left-radius: $raduis;
   border-bottom-left-radius: $raduis;
 }
+
+@mixin commonGrid {
+  position: fixed;
+  top: 20px;
+  z-index: 200;
+  width: 380px;
+  right: 20px;
+}

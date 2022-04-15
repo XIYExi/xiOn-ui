@@ -1,6 +1,6 @@
 {
   "name": "lole-ui",
-  "version": "0.5.6",
+  "version": "0.5.71",
   "private": false,
   "author": "xiye",
   "main": "dist/index.js",

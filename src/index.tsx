@@ -1,11 +1,10 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-
+import './styles/index.scss';
 
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import './styles/index.scss';
 library.add(fas)
 
 export {default as Alert} from './components/Alert/index';
@@ -37,6 +36,8 @@ export {default as Message} from './components/Message/index';
 export {default as Progress} from './components/Progress/index';
 
 export {Radio, RadioGroup} from './components/Radio/index';
+
+export {default as Rate} from './components/Rate/index';
 
 export {default as Space} from './components/Space/index';
 

@@ -42,7 +42,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     }=props;
 
     // btn, btn-lg, btn-primary...
-    const classes = classNames('btn', className, {
+    const classes = classNames('lole-btn', className, {
         [`btn-${btnType}`]:btnType,
         [`btn-${size}`]: size,
         [`btn-type-${shape}`]: shape,

@@ -7,6 +7,7 @@ import Notice from "./components/Notice/Notice";
 import {Col, Row} from "./components/Grid";
 import Rate from "./components/Rate/rate";
 import Modal from "./components/Modal/modal";
+import Carousel from "./components/Carousel/carousel";
 
 
 
@@ -32,34 +33,24 @@ const App:React.FC = () => {
     const textNormal = ['1￥','2￥','3￥','4￥','5￥','6￥','7￥'];
 
     const [visible, setVisible] = useState(false);
+
+    const contentStyle = {
+        height: '160px',
+        color: '#fff',
+        lineHeight: '160px',
+        textAlign: 'center',
+        background: '#364d79',
+    };
     return(
-        <>
-
-            <div style={{width:'300px',height:'300px'}}>
-
-                {/*<Modal visible={visible}
-                       title='Modal'
-                       width='80%'
-                       okText='好的蛤'
-                       cancelText='打咩打咩哟'
-                       onCancel={()=>setVisible(false)}
-                       mask={true}
-                >
-                    <Button btnType='primary'>这是Content</Button>
-                </Modal>*/}
-                <Button onClick={()=>setVisible(true)}>Me</Button>
-                <Button onClick={()=>{
-                    //setVisible(true)
-                    Modal.open({
-                        visible: true,
-                        title: "this is modal title",
-                        content: "Some contents..",
-                        onCancel: () => {setVisible(false)},
-                        onConfirm: () => {setVisible(false)}
-                    })
-                }}>Open</Button>
-            </div>
-        </>
+        <div style={{width:'50vw'}}>
+            <Carousel position='right'>
+                <div style={{height:'160px',lineHeight:'160px',textAlign:'center',background:'#364d79',color:"#fff"}}>1</div>
+                <div style={{height:'160px',lineHeight:'160px',textAlign:'center',background:'#364d79',color:"#fff"}}>2</div>
+                <div style={{height:'160px',lineHeight:'160px',textAlign:'center',background:'#364d79',color:"#fff"}}>3</div>
+                <div style={{height:'160px',lineHeight:'160px',textAlign:'center',background:'#364d79',color:"#fff"}}>4</div>
+                <div style={{height:'160px',lineHeight:'160px',textAlign:'center',background:'#364d79',color:"#fff"}}>5</div>
+            </Carousel>
+        </div>
     )
     
 }

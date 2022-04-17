@@ -15,6 +15,8 @@ export {default as AutoComplete} from './components/AutoComplete/index';
 
 export {default as Button} from './components/Button/index';
 
+export {default as Carousel} from './components/Carousel/index';
+
 export {CheckBox, CheckBoxGroup} from './components/CheckBox/index';
 
 export {default as Divider} from './components/Divider/index';
@@ -32,6 +34,8 @@ export {Layout, Header, Content, Footer, Sider} from './components/Layout/index'
 export {default as Menu} from './components/Menu/index';
 
 export {default as Message} from './components/Message/index';
+
+export {default as Modal} from './components/Modal/index';
 
 export {default as Progress} from './components/Progress/index';
 

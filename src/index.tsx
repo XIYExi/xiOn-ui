@@ -45,9 +45,11 @@ export {default as Rate} from './components/Rate/index';
 
 export {default as Space} from './components/Space/index';
 
+export {default as Spin} from './components/Spin/index';
+
 export {default as Switch} from './components/Switch/index';
 
-export {default as Spin} from './components/Spin/index';
+export {default as Table} from './components/Table/index';
 
 export {default as Upload} from './components/Upload/index';
 

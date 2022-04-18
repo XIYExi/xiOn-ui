@@ -1,0 +1,58 @@
+
+.lole-rate{
+  display: inline-flex;
+  ul{
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    li{
+      list-style: none;//eliminate <li/> default style
+      color: $gray-300;//默认以白色填充
+      position: relative;
+      .half{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        cursor: pointer;
+        overflow: hidden;
+        opacity: 0;
+        &:hover {
+          color: $primary;
+          opacity: 1;
+        }
+      }
+      .normal{
+        cursor: pointer;
+        &:hover {
+          color: $primary;
+        }
+      }
+      &.selected{
+        color: $primary;
+      }
+      &.hoverSelected{
+        color: $primary;
+      }
+      &.halfSelected {
+        .half {
+          color: $primary;
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+
+  .lole-rate-text-wrapper{
+    margin: auto;
+  }
+
+  &.disabled{
+    ul {
+      pointer-events: none;
+    }
+  }
+
+}

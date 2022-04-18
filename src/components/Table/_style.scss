@@ -1,0 +1,1062 @@
+/* common */
+
+.lole-table {
+  &.table {
+    width: 100%;
+    background: #FFFFFF;
+    margin: 1em 0em;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0.1rem;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
+    border-collapse: separate;
+    border-spacing: 0px;
+
+    &:first-child {
+      margin-top: 0em;
+    }
+
+    &:last-child {
+      margin-bottom: 0em;
+    }
+
+    th, td {
+      -webkit-transition: background 0.1s ease, color 0.1s ease;
+      transition: background 0.1s ease, color 0.1s ease;
+    }
+  }
+
+  thead {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+
+  &.table {
+    th {
+      cursor: auto;
+      background: #F9FAFB;
+      text-align: inherit;
+      color: rgba(0, 0, 0, 0.87);
+      padding: 0.9em 0.75em;
+      vertical-align: inherit;
+      font-style: normal;
+      font-weight: bold;
+      text-transform: none;
+      border-bottom: 1px solid rgba(34, 36, 38, 0.1);
+      border-left: none;
+    }
+
+    thead tr {
+      > th:first-child {
+        border-left: none;
+      }
+
+      &:first-child > th {
+        &:first-child {
+          border-radius: 0.28571429rem 0em 0em 0em;
+        }
+
+        &:last-child {
+          border-radius: 0em 0.28571429rem 0em 0em;
+        }
+
+        &:only-child {
+          border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+        }
+      }
+    }
+
+    tfoot {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+
+      th {
+        cursor: auto;
+        border-top: 1px solid rgba(34, 36, 38, 0.15);
+        background: #F9FAFB;
+        text-align: inherit;
+        color: rgba(0, 0, 0, 0.87);
+        padding: 0.75em 0.75em;
+        vertical-align: middle;
+        font-style: normal;
+        font-weight: normal;
+        text-transform: none;
+      }
+
+      tr {
+        > th:first-child {
+          border-left: none;
+        }
+
+        &:first-child > th {
+          &:first-child {
+            border-radius: 0em 0em 0em 0.25rem;
+          }
+
+          &:last-child {
+            border-radius: 0em 0em 0.25rem 0em;
+          }
+
+          &:only-child {
+            border-radius: 0em 0em 0.25rem 0.25rem;
+          }
+        }
+      }
+    }
+
+    tr {
+      td {
+        border-top: 1px solid rgba(34, 36, 38, 0.1);
+      }
+
+      &:first-child td {
+        border-top: none;
+      }
+    }
+
+    td {
+      padding: 0.75em 0.75em;
+      text-align: inherit;
+    }
+  }
+
+  &.structured {
+    &.table {
+      border-collapse: collapse;
+
+      thead th {
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    &.sortable.table thead th {
+      border-left: 1px solid rgba(34, 36, 38, 0.15);
+      border-right: 1px solid rgba(34, 36, 38, 0.15);
+    }
+
+    &.basic.table th {
+      border-left: none;
+      border-right: none;
+    }
+
+    &.celled.table tr {
+      th, td {
+        border-left: 1px solid rgba(34, 36, 38, 0.1);
+        border-right: 1px solid rgba(34, 36, 38, 0.1);
+      }
+    }
+  }
+
+  &.definition.table {
+    thead:not(.full-width) th:first-child {
+      pointer-events: none;
+      background: transparent;
+      font-weight: normal;
+      color: rgba(0, 0, 0, 0.4);
+      -webkit-box-shadow: -1px -1px 0px 1px #FFFFFF;
+      box-shadow: -1px -1px 0px 1px #FFFFFF;
+    }
+
+    tfoot:not(.full-width) th:first-child {
+      pointer-events: none;
+      background: transparent;
+      font-weight: normal;
+      color: rgba(0, 0, 0, 0.4);
+      -webkit-box-shadow: 1px 1px 0px 1px #FFFFFF;
+      box-shadow: 1px 1px 0px 1px #FFFFFF;
+    }
+  }
+
+  &.celled.definition.table {
+    thead:not(.full-width) th:first-child {
+      -webkit-box-shadow: 0px -1px 0px 1px #FFFFFF;
+      box-shadow: 0px -1px 0px 1px #FFFFFF;
+    }
+
+    tfoot:not(.full-width) th:first-child {
+      -webkit-box-shadow: 0px 1px 0px 1px #FFFFFF;
+      box-shadow: 0px 1px 0px 1px #FFFFFF;
+    }
+  }
+
+  &.definition.table {
+    tr td {
+      &:first-child:not(.ignored), &.definition {
+        background: rgba(0, 0, 0, 0.03);
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.95);
+        text-transform: none;
+        font-size: 1em;
+      }
+    }
+
+    thead:not(.full-width) th:nth-child(2), tfoot:not(.full-width) th:nth-child(2), td:nth-child(2) {
+      border-left: 1px solid rgba(34, 36, 38, 0.15);
+    }
+  }
+
+  &.table {
+    tr.primary, td.primary {
+      -webkit-box-shadow: 0px 0px 0px #A3C293 inset;
+      box-shadow: 0px 0px 0px #A3C293 inset;
+    }
+
+    tr.primary, td.primary {
+      background: #FCFFF5 !important;
+      color: rgb(249, 204, 226) !important;
+    }
+
+    tr.info, td.info {
+      -webkit-box-shadow: 0px 0px 0px #E0B4B4 inset;
+      box-shadow: 0px 0px 0px #E0B4B4 inset;
+    }
+
+    tr.info, td.info {
+      background: #FFF6F6 !important;
+      color: #17a2b8 !important;
+    }
+
+    tr.error, td.error {
+      -webkit-box-shadow: 0px 0px 0px #E0B4B4 inset;
+      box-shadow: 0px 0px 0px #E0B4B4 inset;
+    }
+
+    tr.error, td.error {
+      background: #FFF6F6 !important;
+      color: #dc3545 !important;
+    }
+
+    tr.warning, td.warning {
+      -webkit-box-shadow: 0px 0px 0px #C9BA9B inset;
+      box-shadow: 0px 0px 0px #C9BA9B inset;
+    }
+
+    tr.warning, td.warning {
+      background: #FFFAF3 !important;
+      color: #fadb14 !important;
+    }
+
+    tr.active, td.active {
+      -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;
+    }
+
+    tr.active, td.active {
+      background: #E0E0E0 !important;
+      color: rgba(0, 0, 0, 0.87) !important;
+    }
+
+    tr {
+      &.disabled td, td.disabled, &.disabled:hover, &:hover td.disabled {
+        pointer-events: none;
+        color: rgba(40, 40, 40, 0.3);
+      }
+    }
+
+    &[class*="left aligned"], [class*="left aligned"] {
+      text-align: left;
+    }
+
+    &[class*="center aligned"], [class*="center aligned"] {
+      text-align: center;
+    }
+
+    &[class*="right aligned"], [class*="right aligned"] {
+      text-align: right;
+    }
+
+    &[class*="top aligned"], [class*="top aligned"] {
+      vertical-align: top;
+    }
+
+    &[class*="middle aligned"], [class*="middle aligned"] {
+      vertical-align: middle;
+    }
+
+    &[class*="bottom aligned"], [class*="bottom aligned"] {
+      vertical-align: bottom;
+    }
+
+    th.collapsing, td.collapsing {
+      width: 1px;
+      white-space: nowrap;
+    }
+  }
+
+  &.fixed.table {
+    table-layout: fixed;
+
+    th, td {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &.selectable.table tbody tr:hover, &.table tbody tr td.selectable:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: rgba(0, 0, 0, 0.95) !important;
+  }
+
+  &.selectable.inverted.table tbody tr:hover, &.inverted.table tbody tr td.selectable:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+  }
+
+  &.table tbody tr td.selectable {
+    padding: 0em;
+
+    > a:not(.lole-table) {
+      display: block;
+      color: inherit;
+      padding: 0.78571429em 0.78571429em;
+    }
+  }
+
+  &.selectable.table tr.error:hover, &.table tr td.selectable.error:hover {
+    background: #ffe7e7 !important;
+    color: #dc3545 !important;
+  }
+
+  &.selectable.table tr {
+    &:hover td.error {
+      background: #ffe7e7 !important;
+      color: #dc3545 !important;
+    }
+
+    &.warning:hover {
+      background: #fff4e4 !important;
+      color: #fadb14 !important;
+    }
+  }
+
+  &.table tr td.selectable.warning:hover {
+    background: #fff4e4 !important;
+    color: #fadb14 !important;
+  }
+
+  &.selectable.table tr {
+    &:hover td.warning {
+      background: #fff4e4 !important;
+      color: #fadb14 !important;
+    }
+
+    &.active:hover {
+      background: #E0E0E0 !important;
+      color: rgba(0, 0, 0, 0.87) !important;
+    }
+  }
+
+  &.table tr td.selectable.active:hover {
+    background: #E0E0E0 !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+  }
+
+  &.selectable.table tr {
+    &:hover td.active {
+      background: #E0E0E0 !important;
+      color: rgba(0, 0, 0, 0.87) !important;
+    }
+
+    &.primary:hover {
+      background: #f7ffe6 !important;
+      color: rgb(249, 204, 226) !important;
+    }
+  }
+
+  &.table tr td.selectable.primary:hover {
+    background: #f7ffe6 !important;
+    color: rgb(249, 204, 226) !important;
+  }
+
+  &.selectable.table tr {
+    &:hover td.primary {
+      background: #f7ffe6 !important;
+      color: rgb(249, 204, 226) !important;
+    }
+
+    &.info:hover {
+      background: #ffe7e7 !important;
+      color: #17a2b8 !important;
+    }
+  }
+
+  &.table tr td.selectable.info:hover, &.selectable.table tr:hover td.info {
+    background: #ffe7e7 !important;
+    color: #17a2b8 !important;
+  }
+
+  &.attached {
+    &.table {
+      top: 0px;
+      bottom: 0px;
+      border-radius: 0px;
+      margin: 0em -1px;
+      width: calc(100% +  2px );
+      max-width: calc(100% +  2px );
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border: 1px solid #D4D4D5;
+    }
+
+    + .lole-table.attached.table:not(.top) {
+      border-top: none;
+    }
+  }
+
+  &[class*="top attached"].table {
+    bottom: 0px;
+    margin-bottom: 0em;
+    top: 0px;
+    margin-top: 1em;
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  }
+
+  &.table[class*="top attached"]:first-child {
+    margin-top: 0em;
+  }
+
+  &[class*="bottom attached"].table {
+    bottom: 0px;
+    margin-top: 0em;
+    top: 0px;
+    margin-bottom: 1em;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+
+    &:last-child {
+      margin-bottom: 0em;
+    }
+  }
+
+  &.striped.table {
+    > tr:nth-child(2n), tbody tr:nth-child(2n) {
+      background-color: rgba(0, 0, 50, 0.02);
+    }
+  }
+
+  &.inverted.striped.table {
+    > tr:nth-child(2n), tbody tr:nth-child(2n) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  &.striped.selectable.selectable.selectable.table tbody tr.active:hover {
+    background: #EFEFEF !important;
+    color: rgba(0, 0, 0, 0.95) !important;
+  }
+
+  &.table {
+    &[class*="single line"], [class*="single line"], &[class*="single line"], [class*="single line"] {
+      white-space: nowrap;
+    }
+  }
+
+  &.primary.table {
+    border-top: 0.2em solid rgb(249, 204, 226);
+  }
+
+  &.inverted.primary.table {
+    background-color: rgb(249, 204, 226) !important;
+    color: #FFFFFF !important;
+  }
+
+  &.indigo.table {
+    border-top: 0.2em solid  #6610f2;
+  }
+
+  &.inverted.indigo.table {
+    background-color: #6610f2 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.purple.table {
+    border-top: 0.2em solid  #6f42c1;
+  }
+
+  &.inverted.purple.table {
+    background-color: #6f42c1 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.pink.table {
+    border-top: 0.2em solid  #d63384;
+  }
+
+  &.inverted.pink.table {
+    background-color: #d63384 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.red.table {
+    border-top: 0.2em solid #dc3545;
+  }
+
+  &.inverted.red.table {
+    background-color: #dc3545 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.orange.table {
+    border-top: 0.2em solid #fd7e14;
+  }
+
+  &.inverted.orange.table {
+    background-color: #fd7e14 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.yellow.table {
+    border-top: 0.2em solid #fadb14;
+  }
+
+  &.inverted.yellow.table {
+    background-color: #fadb14 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.green.table {
+    border-top: 0.2em solid #52c41a;
+  }
+
+  &.inverted.green.table {
+    background-color: #52c41a !important;
+    color: #FFFFFF !important;
+  }
+
+  &.teal.table {
+    border-top: 0.2em solid #20c997;
+  }
+
+  &.inverted.teal.table {
+    background-color: #20c997 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.cyan.table {
+    border-top: 0.2em solid #17a2b8;
+  }
+
+  &.inverted.cyan.table {
+    background-color: #17a2b8 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.gray.table {
+    border-top: 0.2em solid #adb5bd;
+  }
+
+  &.inverted.gray.table {
+    background-color: #adb5bd !important;
+    color: #FFFFFF !important;
+  }
+
+  &.black.table {
+    border-top: 0.2em solid #1B1C1D;
+  }
+
+  &.inverted.black.table {
+    background-color: #1B1C1D !important;
+    color: #FFFFFF !important;
+  }
+
+  &.one.col.table td {
+    width: 100%;
+  }
+
+  &.two.col.table td {
+    width: 50%;
+  }
+
+  &.three.col.table td {
+    width: 33.33333333%;
+  }
+
+  &.four.col.table td {
+    width: 25%;
+  }
+
+  &.five.col.table td {
+    width: 20%;
+  }
+
+  &.six.col.table td {
+    width: 16.66666667%;
+  }
+
+  &.seven.col.table td {
+    width: 14.28571429%;
+  }
+
+  &.eight.col.table td {
+    width: 12.5%;
+  }
+
+  &.nine.col.table td {
+    width: 11.11111111%;
+  }
+
+  &.ten.col.table td {
+    width: 10%;
+  }
+
+  &.eleven.col.table td {
+    width: 9.09090909%;
+  }
+
+  &.twelve.col.table td {
+    width: 8.33333333%;
+  }
+
+  &.thirteen.col.table td {
+    width: 7.69230769%;
+  }
+
+  &.fourteen.col.table td {
+    width: 7.14285714%;
+  }
+
+  &.fifteen.col.table td {
+    width: 6.66666667%;
+  }
+
+  &.sixteen.col.table td {
+    width: 6.25%;
+  }
+
+  &.seventeen.col.table td {
+    width: 5.88235294%;
+  }
+
+  &.eighteen.col.table td {
+    width: 5.55555556%;
+  }
+
+  &.nineteen.col.table td {
+    width: 5.26315789%;
+  }
+
+  &.twenty.col.table td {
+    width: 5%;
+  }
+
+  &.twenty-one.col.table td {
+    width: 4.76190476%;
+  }
+
+  &.twenty-two.col.table td {
+    width: 4.54545454%;
+  }
+
+  &.twenty-three.col.table td {
+    width: 4.34782609%;
+  }
+
+  &.twenty-four.col.table td {
+    width: 4.16666667%;
+  }
+
+  &.table {
+    th.one.wide, td.one.wide {
+      width: 4.16666667% !important;
+    }
+
+    th.two.wide, td.two.wide {
+      width: 8.33333334% !important;
+    }
+
+    th.three.wide, td.three.wide {
+      width: 12.5% !important;
+    }
+
+    th.four.wide, td.four.wide {
+      width: 16.66666667% !important;
+    }
+
+    th.five.wide, td.five.wide {
+      width: 20.83333334% !important;
+    }
+
+    th.six.wide, td.six.wide {
+      width: 25% !important;
+    }
+
+    th.seven.wide, td.seven.wide {
+      width: 29.16666667% !important;
+    }
+
+    th.eight.wide, td.eight.wide {
+      width: 33.33333333% !important;
+    }
+
+    th.nine.wide, td.nine.wide {
+      width: 37.5% !important;
+    }
+
+    th.ten.wide, td.ten.wide {
+      width: 41.66666667% !important;
+    }
+
+    th.eleven.wide, td.eleven.wide {
+      width: 45.83333334% !important;
+    }
+
+    th.twelve.wide, td.twelve.wide {
+      width: 50% !important;
+    }
+
+    th.thirteen.wide, td.thirteen.wide {
+      width: 54.16666667% !important;
+    }
+
+    th.fourteen.wide, td.fourteen.wide {
+      width: 58.33333334% !important;
+    }
+
+    th.fifteen.wide, td.fifteen.wide {
+      width: 62.5% !important;
+    }
+
+    th.sixteen.wide, td.sixteen.wide {
+      width: 66.66666667% !important;
+    }
+
+    th.seventeen.wide, td.seventeen.wide {
+      width: 70.83333334%  !important;
+    }
+
+    th.eighteen.wide, td.eighteen.wide {
+      width: 75% !important;
+    }
+
+    th.nineteen.wide, td.nineteen.wide {
+      width: 79.16666667% !important;
+    }
+
+    th.twenty.wide, td.twenty.wide {
+      width: 83.33333334% !important;
+    }
+
+    th.twenty-one.wide, td.twenty-one.wide {
+      width: 87.5%  !important;
+    }
+
+    th.twenty-two.wide, td.twenty-two.wide {
+      width: 91.66666667% !important;
+    }
+
+    th.twenty-three.wide, td.twenty-three.wide {
+      width: 95.83333334% !important;
+    }
+
+    th.twenty-four.wide, td.twenty-four.wide {
+      width: 100% !important;
+    }
+  }
+
+  &.sortable.table {
+    thead th {
+      cursor: pointer;
+      white-space: nowrap;
+      border-left: 1px solid rgba(34, 36, 38, 0.15);
+      color: rgba(0, 0, 0, 0.87);
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &.sorted {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:hover {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+      }
+
+      &:after {
+        display: none;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        content: '';
+        height: 1em;
+        width: auto;
+        opacity: 0.8;
+        margin: 0em 0em 0em 0.5em;
+        font-family: 'Icons';
+      }
+
+      &.ascending:after {
+        content: '\f0d8';
+      }
+
+      &.descending:after {
+        content: '\f0d7';
+      }
+    }
+
+    th.disabled:hover {
+      cursor: auto;
+      color: rgba(40, 40, 40, 0.3);
+    }
+
+    thead th {
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+        color: rgba(0, 0, 0, 0.8);
+      }
+
+      &.sorted {
+        background: rgba(0, 0, 0, 0.05);
+        color: rgba(0, 0, 0, 0.95);
+
+        &:after {
+          display: inline-block;
+        }
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.05);
+          color: rgba(0, 0, 0, 0.95);
+        }
+      }
+    }
+  }
+
+  &.inverted {
+    &.sortable.table thead th {
+      &.sorted {
+        background: rgba(255, 255, 255, 0.15) -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
+        background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+        background: rgba(255, 255, 255, 0.15) linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+        color: #ffffff;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.08) -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
+        background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+        background: rgba(255, 255, 255, 0.08) linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+        color: #ffffff;
+      }
+
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+
+    &.table {
+      background: #333333;
+      color: rgba(255, 255, 255, 0.9);
+      border: none;
+
+      th {
+        background-color: rgba(0, 0, 0, 0.15);
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+      }
+
+      tr {
+        td {
+          border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        &.disabled td, td.disabled, &.disabled:hover td, &:hover td.disabled {
+          pointer-events: none;
+          color: rgba(225, 225, 225, 0.3);
+        }
+      }
+    }
+
+    &.definition.table {
+      tfoot:not(.full-width) th:first-child, thead:not(.full-width) th:first-child {
+        background: #FFFFFF;
+      }
+
+      tr td:first-child {
+        background: rgba(255, 255, 255, 0.02);
+        color: #ffffff;
+      }
+    }
+  }
+
+  &.celled.table tr {
+    th, td {
+      border-left: 1px solid rgba(34, 36, 38, 0.1);
+    }
+
+    th:first-child, td:first-child {
+      border-left: none;
+    }
+  }
+
+  &.collapsing.table {
+    width: auto;
+  }
+
+  &.padded.table {
+    th {
+      padding-left: 1em;
+      padding-right: 1em;
+      padding: 1em 1em;
+    }
+
+    td {
+      padding: 1em 1em;
+    }
+  }
+
+  &.compact.table {
+    th {
+      padding-left: 0.7em;
+      padding-right: 0.7em;
+    }
+
+    td {
+      padding: 0.5em 0.7em;
+    }
+  }
+
+  &.small.table {
+    font-size: 0.9em;
+  }
+
+  &.table {
+    font-size: 1em;
+  }
+
+  &.large.table {
+    font-size: 1.1em;
+  }
+}
+
+/*content*/
+
+/* header */
+
+/* Footer */
+
+/* Table Row */
+
+/* Table Cells */
+
+/*--------------
+    Complex
+---------------*/
+
+/*结构化*/
+
+/*定义*/
+
+/* Remove Border */
+
+/* Highlight Defining Column */
+
+/* Fix 2nd Column */
+
+/*  === 状态 ===  */
+/*primary*/
+
+/*info*/
+
+/*error*/
+
+/*warning*/
+
+/*激活 active*/
+
+/*disabled 禁用*/
+
+/*文字对齐*/
+
+/*垂直对其*/
+
+/*collapsing*/
+
+/*fixed*/
+
+/*selectable*/
+
+/* Selectable Cell Link */
+
+/*other states*/
+
+/*吸附*/
+
+/*middle*/
+
+/* Top */
+
+/* Bottom */
+
+/*striped条纹*/
+/* Table Striping */
+
+/* Stripes */
+
+/* Allow striped active hover */
+
+/*--------------
+   Single Line
+---------------*/
+
+/* color */
+/*primary*/
+
+/*indigo*/
+
+/*purple*/
+
+/*pink*/
+
+/*red*/
+
+/*orange*/
+
+/*yellow*/
+
+/*green*/
+
+/*teal*/
+
+/*cyan*/
+
+/* gray-500 */
+
+/* black */
+
+/*col count*/
+
+/*sortable*/
+
+/* Hover */
+
+/* Sorted */
+
+/* Sorted Hover */
+
+/* Inverted */
+
+/* Text Color */
+
+/* Definition */
+
+/*celled*/
+
+/*collapsing*/
+
+/*padded*/
+
+/*compact*/
+
+/*size */
+
+/* Standard */
+
+/* Large */

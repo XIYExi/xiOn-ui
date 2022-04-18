@@ -1,13 +1,14 @@
 import React, {Component, useState} from 'react';
 
 import Message from "./components/Message/message";
-import {Button} from "./index";
+import {Button, Table} from "./index";
 import {AiFillStar, AiOutlineClose, AiOutlineHeart, AiOutlineStop} from "react-icons/ai";
 import Notice from "./components/Notice/Notice";
 import {Col, Row} from "./components/Grid";
 import Rate from "./components/Rate/rate";
 import Modal from "./components/Modal/modal";
 import Carousel from "./components/Carousel/carousel";
+
 
 
 
@@ -43,13 +44,28 @@ const App:React.FC = () => {
     };
     return(
         <div style={{width:'50vw'}}>
-            <Carousel position='right'>
-                <div style={{height:'160px',lineHeight:'160px',textAlign:'center',background:'#364d79',color:"#fff"}}>1</div>
-                <div style={{height:'160px',lineHeight:'160px',textAlign:'center',background:'#364d79',color:"#fff"}}>2</div>
-                <div style={{height:'160px',lineHeight:'160px',textAlign:'center',background:'#364d79',color:"#fff"}}>3</div>
-                <div style={{height:'160px',lineHeight:'160px',textAlign:'center',background:'#364d79',color:"#fff"}}>4</div>
-                <div style={{height:'160px',lineHeight:'160px',textAlign:'center',background:'#364d79',color:"#fff"}}>5</div>
-            </Carousel>
+            <Table>
+                <Table.Header>
+                    <Table.Row>
+                        <Table.HeaderItem>Header1</Table.HeaderItem>
+                        <Table.HeaderItem>Header2</Table.HeaderItem>
+                        <Table.HeaderItem>Header3</Table.HeaderItem>
+                    </Table.Row>
+                </Table.Header>
+                <Table.Body>
+                    <Table.Row>
+                        <Table.Item>1</Table.Item>
+                        <Table.Item>2</Table.Item>
+                        <Table.Item>3</Table.Item>
+                    </Table.Row>
+                    <Table.Row>
+                        <Table.Item>1</Table.Item>
+                        <Table.Item>2</Table.Item>
+                        <Table.Item>3</Table.Item>
+                    </Table.Row>
+                </Table.Body>
+                <Table.Footer></Table.Footer>
+            </Table>
         </div>
     )
     

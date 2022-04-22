@@ -11,6 +11,8 @@ export interface MenuProps {
     style?: React.CSSProperties;
     onSelect?: SelectCallBack;
     defaultOpenSubMenus?: string[];
+    /*受否按照单元格划分 水平生效，垂直默认打开 */
+    celled?:boolean;
 }
 
 
@@ -34,11 +36,14 @@ const Menu: React.FC<MenuProps> = (props) => {
         defaultIndex,
         onSelect,
         defaultOpenSubMenus,
+        celled,
     } = props;
     const [currentActive, setActive] = useState(defaultIndex);
-    const classes = classNames('xiOn-menu',className,{
-        'menu-vertical': mode==='vertical',
-        'menu-horizontal': mode!=='vertical',
+    const classes = classNames('lole-menu',className,{
+        'celled vertical': mode==='vertical',
+        'horizontal': mode!=='vertical',
+        'celled':celled,
+        'menu':true,
     })
     const handleClick = (index:string)=>{
         setActive(index);
@@ -70,7 +75,7 @@ const Menu: React.FC<MenuProps> = (props) => {
     return(
         <ul className={classes}
             style={style}
-            data-testid='test-menu'
+            data-testid='lole-menu'
         >
             <MenuContext.Provider value={passedContext}>
                 {renderChildren()}

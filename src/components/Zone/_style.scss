@@ -1,0 +1,785 @@
+/*
+区块Zone对应一个div，提供基本的布局样式
+同时可以和其他组件进行联动。
+*/
+
+.lole-zone {
+  &.zone {
+    position: relative;
+    background: #ffffff;
+    margin: 1rem 0em;
+    padding: 1em 1em;
+    border-radius: 0.2rem;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+    -webkit-box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.vertical.zone {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background: none transparent;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &[class*="bottom attached"].zone > [class*="top attached"].label {
+    border-top-left-radius: 0em;
+    border-top-right-radius: 0em;
+  }
+
+  &[class*="top attached"].zone > [class*="bottom attached"].label {
+    border-bottom-left-radius: 0em;
+    border-bottom-right-radius: 0em;
+  }
+
+  &.attached.zone:not(.top):not(.bottom) > {
+    [class*="top attached"].label {
+      border-top-left-radius: 0em;
+      border-top-right-radius: 0em;
+    }
+
+    [class*="bottom attached"].label {
+      border-bottom-left-radius: 0em;
+      border-bottom-right-radius: 0em;
+    }
+  }
+
+  &.piled {
+    &.zones {
+      margin: 3em 0em;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      z-index: auto;
+    }
+
+    &.zone {
+      margin: 3em 0em;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      z-index: auto;
+
+      &:first-child {
+        margin-top: 0em;
+      }
+
+      &:last-child {
+        margin-bottom: 0em;
+      }
+    }
+
+    &.zones {
+      &:after, &:before {
+        background-color: #FFFFFF;
+        visibility: visible;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0px;
+        position: absolute;
+        width: 100%;
+        border: 1px solid rgba(34, 36, 38, 0.15);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+
+    &.zone {
+      &:after, &:before {
+        background-color: #FFFFFF;
+        visibility: visible;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0px;
+        position: absolute;
+        width: 100%;
+        border: 1px solid rgba(34, 36, 38, 0.15);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+
+    &.zones:before, &.zone:before {
+      -webkit-transform: rotate(-1.2deg);
+      transform: rotate(-1.2deg);
+      top: 0;
+      z-index: -2;
+    }
+
+    &.zones:after, &.zone:after {
+      -webkit-transform: rotate(1.2deg);
+      transform: rotate(1.2deg);
+      top: 0;
+      z-index: -1;
+    }
+  }
+
+  &[class*="top attached"].piled.zone {
+    margin-top: 3em;
+    margin-bottom: 0em;
+  }
+
+  &.piled.zone {
+    &[class*="top attached"]:first-child {
+      margin-top: 0em;
+    }
+
+    &[class*="bottom attached"] {
+      margin-top: 0em;
+      margin-bottom: 3em;
+
+      &:last-child {
+        margin-bottom: 0em;
+      }
+    }
+  }
+
+  &.stacked {
+    &.zone {
+      padding-bottom: 1.4em;
+    }
+
+    &.zones {
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0%;
+        border-top: 1px solid rgba(34, 36, 38, 0.15);
+        background: rgba(0, 0, 0, 0.03);
+        width: 100%;
+        height: 6px;
+        visibility: visible;
+      }
+    }
+
+    &.zone {
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0%;
+        border-top: 1px solid rgba(34, 36, 38, 0.15);
+        background: rgba(0, 0, 0, 0.03);
+        width: 100%;
+        height: 6px;
+        visibility: visible;
+      }
+    }
+
+    &.zones:before, &.zone:before {
+      display: none;
+    }
+
+    &.inverted {
+      &.zones {
+        &:before, &:after {
+          background-color: rgba(0, 0, 0, 0.03);
+          border-top: 1px solid rgba(34, 36, 38, 0.35);
+        }
+      }
+
+      &.zone {
+        &:before, &:after {
+          background-color: rgba(0, 0, 0, 0.03);
+          border-top: 1px solid rgba(34, 36, 38, 0.35);
+        }
+      }
+    }
+  }
+
+  &.padded.zone {
+    padding: 1.5em;
+
+    &.vertical.zone {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+
+  &.compact {
+    &.zone {
+      display: table;
+    }
+
+    &.zones {
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+
+      .zone {
+        display: block;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+      }
+    }
+  }
+
+  &.zones .compact.zone {
+    display: block;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+  }
+
+  &.circular.zone {
+    display: table-cell;
+    padding: 2em;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 500em;
+  }
+
+  &.raised {
+    &.zones, &.zone {
+      -webkit-box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.15);
+      box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.15);
+    }
+  }
+
+  &.zones {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    margin: 1rem 0em;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    -webkit-box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+    border-radius: 0.28571429rem;
+
+    &:first-child {
+      margin-top: 0em;
+    }
+
+    &:last-child {
+      margin-bottom: 0em;
+    }
+
+    > .zone {
+      top: 0px;
+      bottom: 0px;
+      border-radius: 0px;
+      margin: 0em;
+      width: auto;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border: none;
+      border-top: 1px solid rgba(34, 36, 38, 0.15);
+    }
+
+    &:not(.horizontal) > .zone {
+      &:first-child {
+        border-top: none;
+        margin-top: 0em;
+        bottom: 0px;
+        margin-bottom: 0em;
+        top: 0px;
+        border-radius: 0.2rem 0.2rem 0em 0em;
+      }
+
+      &:last-child {
+        top: 0px;
+        bottom: 0px;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        -webkit-box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+        box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+        border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+      }
+
+      &:only-child {
+        border-radius: 0.28571429rem;
+      }
+    }
+
+    > {
+      .lole-zone.zones {
+        border-top: 1px solid rgba(34, 36, 38, 0.15);
+        margin: 1rem 1rem;
+      }
+
+      .zones:first-child {
+        border-top: none;
+      }
+
+      .zone + .zones:not(.horizontal) {
+        margin-top: 0em;
+      }
+    }
+  }
+
+  &.horizontal.zones {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    background-color: transparent;
+    border-radius: 0px;
+    padding: 0em;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+    margin: 1rem 0em;
+    border-radius: 0.28571429rem;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+  }
+
+  &.zones > .horizontal.zones {
+    margin: 0em;
+    background-color: transparent;
+    border-radius: 0px;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-top: 1px solid rgba(34, 36, 38, 0.15);
+  }
+
+  &.horizontal.zones > .zone {
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    -ms-flex: 1 1 0px;
+
+    /* Solves #2550 MS Flex */
+    margin: 0em;
+    min-width: 0px;
+    background-color: transparent;
+    border-radius: 0px;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-left: 1px solid rgba(34, 36, 38, 0.15);
+  }
+
+  &.zones > .horizontal.zones:first-child {
+    border-top: none;
+  }
+
+  &.horizontal.zones > .zone:first-child {
+    border-left: none;
+  }
+
+  &.disabled.zone {
+    opacity: 0.45;
+    color: rgba(40, 40, 40, 0.3);
+  }
+
+  &.loading.zone {
+    position: relative;
+    cursor: default;
+    pointer-events: none;
+    text-shadow: none !important;
+    color: transparent !important;
+    -webkit-transition: all 0s linear;
+    transition: all 0s linear;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0%;
+      left: 0%;
+      background: rgba(255, 255, 255, 0.8);
+      width: 100%;
+      height: 100%;
+      border-radius: 0.28571429rem;
+      z-index: 100;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      margin: -1.5em 0em 0em -1.5em;
+      width: 3em;
+      height: 3em;
+      -webkit-animation: zone-spin-html 0.6s linear;
+      animation: zone-spin-html 0.6s linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      border-radius: 500rem;
+      border-color: #767676 rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+      border-style: solid;
+      border-width: 0.2em;
+      -webkit-box-shadow: 0px 0px 0px 1px transparent;
+      box-shadow: 0px 0px 0px 1px transparent;
+      visibility: visible;
+      z-index: 101;
+    }
+  }
+
+  &.basic.zone {
+    background: none transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0px;
+  }
+
+  &.primary.zone:not(.inverted) {
+    border-top: 2px solid rgb(249, 204, 226) !important;
+  }
+
+  &.inverted.primary.zone {
+    background-color: rgb(249, 204, 226) !important;
+    color: #FFFFFF !important;
+  }
+
+  &.orange.zone:not(.inverted) {
+    border-top: 2px solid #fd7e14 !important;
+  }
+
+  &.inverted.orange.zone {
+    background-color: #fd7e14 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.yellow.zone:not(.inverted) {
+    border-top: 2px solid #fadb14 !important;
+  }
+
+  &.inverted.yellow.zone {
+    background-color: #fadb14 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.indigo.zone:not(.inverted) {
+    border-top: 2px solid #6610f2 !important;
+  }
+
+  &.inverted.indigo.zone {
+    background-color: #6610f2 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.green.zone:not(.inverted) {
+    border-top: 2px solid #52c41a !important;
+  }
+
+  &.inverted.green.zone {
+    background-color: #52c41a !important;
+    color: #FFFFFF !important;
+  }
+
+  &.teal.zone:not(.inverted) {
+    border-top: 2px solid #20c997 !important;
+  }
+
+  &.inverted.teal.zone {
+    background-color: #20c997 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.cyan.zone:not(.inverted) {
+    border-top: 2px solid  #17a2b8 !important;
+  }
+
+  &.inverted.cyan.zone {
+    background-color: #17a2b8 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.purple.zone:not(.inverted) {
+    border-top: 2px solid #6f42c1 !important;
+  }
+
+  &.inverted.purple.zone {
+    background-color: #6f42c1 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.red.zone:not(.inverted) {
+    border-top: 2px solid #dc3545 !important;
+  }
+
+  &.inverted.red.zone {
+    background-color: #dc3545 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.pink.zone:not(.inverted) {
+    border-top: 2px solid  #d63384 !important;
+  }
+
+  &.inverted.pink.zone {
+    background-color: #d63384 !important;
+    color: #FFFFFF !important;
+  }
+
+  &.gray.zone:not(.inverted) {
+    border-top: 2px solid #adb5bd !important;
+  }
+
+  &.inverted.gray.zone {
+    background-color: #adb5bd !important;
+    color: #FFFFFF !important;
+  }
+
+  &.black.zone:not(.inverted) {
+    border-top: 2px solid #1B1C1D !important;
+  }
+
+  &.inverted.black.zone {
+    background-color: #1B1C1D !important;
+    color: #FFFFFF !important;
+  }
+
+  &[class*="left aligned"].zone {
+    text-align: left;
+  }
+
+  &[class*="right aligned"].zone {
+    text-align: right;
+  }
+
+  &[class*="center aligned"].zone {
+    text-align: center;
+  }
+
+  &.floated.zone, &[class*="left floated"].zone {
+    float: left;
+    margin-right: 1em;
+  }
+
+  &[class*="right floated"].zone {
+    float: right;
+    margin-left: 1em;
+  }
+
+  &.inverted.zone {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #1B1C1D;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  &.primary.inverted.zone {
+    background: #1B1C1D;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  &.inverted {
+    &.zone {
+      .zone {
+        color: rgba(0, 0, 0, 0.87);
+      }
+
+      .inverted.zone {
+        color: rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    &.attached.zone {
+      border-color: #555555;
+    }
+  }
+
+  &.attached {
+    &.zone {
+      top: 0px;
+      bottom: 0px;
+      border-radius: 0px;
+      margin: 0em -1px;
+      width: calc(100% +  2px );
+      max-width: calc(100% +  2px );
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border: 1px solid #D4D4D5;
+    }
+
+    &:not(.zone) + .ui.attached.zone:not(.top) {
+      border-top: none;
+    }
+  }
+
+  &[class*="top attached"].zone {
+    bottom: 0px;
+    margin-bottom: 0em;
+    top: 0px;
+    margin-top: 1rem;
+    border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+  }
+
+  &.zone {
+    &[class*="top attached"]:first-child {
+      margin-top: 0em;
+    }
+
+    &[class*="bottom attached"] {
+      bottom: 0px;
+      margin-top: 0em;
+      top: 0px;
+      margin-bottom: 1rem;
+      -webkit-box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+      box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+      border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+
+      &:last-child {
+        margin-bottom: 0em;
+      }
+    }
+  }
+
+  &.small {
+    &.zones .zone, &.zone {
+      font-size: 0.92857143rem;
+    }
+  }
+
+  &.zones .zone, &.zone {
+    font-size: 1rem;
+  }
+
+  &.large {
+    &.zones .zone, &.zone {
+      font-size: 1.14285714rem;
+    }
+  }
+}
+
+/*vertical*/
+
+/* Label */
+
+/*
+top attached顶部吸附，所以需要把自己的顶部radius置为0
+*/
+
+/*
+bottom attached底部吸附，所以需要把自己的底部radius置为0
+*/
+
+/*piled*/
+
+/*piled-attached*/
+
+/*stacked堆叠*/
+
+/*stacked-Inverted */
+
+/*-------------------
+       Padded
+--------------------*/
+
+/* Padded vertical */
+
+/*-------------------
+       Compact
+--------------------*/
+
+/* Compact Group */
+
+/*-------------------
+       Circular
+--------------------*/
+
+/*raised*/
+
+/*group*/
+
+/* Bottom */
+
+/* Only */
+
+/* Nested Horizontal Group */
+
+/* Horizontal Segment */
+
+/* Border Fixes */
+
+/*states*/
+/*disables*/
+
+/*loading*/
+
+/*
+由于原生不提供spin组件，这里显示的定义zone的loading状态动画，
+react和vue中可以直接使用标签包裹的形式进入加载状态
+*/
+@keyframes zone-spin-html {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*-------------------
+       Basic
+--------------------*/
+
+/*color*/
+/* primary */
+
+/* Orange */
+
+/* Yellow */
+
+/* indigo */
+
+/* Green */
+
+/* Teal */
+
+/* cyan */
+
+/* purple */
+
+/* red */
+
+/* Pink */
+
+/* gray-500 */
+
+/* Black */
+
+/*-------------------
+       Text-Aligned
+--------------------*/
+
+/*-------------------
+       Zone-Floated
+--------------------*/
+
+/*-------------------
+      Inverted
+--------------------*/
+
+/* Attached */
+
+/*-------------------
+      Attached
+--------------------*/
+/* Middle */
+
+/* Top */
+
+/* Bottom */
+
+/*size*/

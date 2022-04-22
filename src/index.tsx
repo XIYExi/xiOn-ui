@@ -53,6 +53,8 @@ export {default as Table} from './components/Table/index';
 
 export {default as Upload} from './components/Upload/index';
 
+export {default as Zone} from './components/Zone/index';
+
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 

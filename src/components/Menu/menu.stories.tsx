@@ -9,7 +9,7 @@ import SubMenu from "./subMenu";
 const MenuType=()=>{
     return(
         <>
-            <Menu defaultIndex='0'>
+            <Menu mode={'horizontal'} defaultIndex='0'>
                 <MenuItem>Menu Item</MenuItem>
                 <MenuItem disabled>Disabled Item</MenuItem>
                 <SubMenu title='SubMenu'>
@@ -27,10 +27,8 @@ const MenuMode=()=>{
             <Menu mode='vertical'>
                 <MenuItem>Menu Item</MenuItem>
                 <MenuItem disabled>Disabled Item</MenuItem>
-                <SubMenu title='Vertical SubMenu'>
-                    <MenuItem>Menu Item</MenuItem>
-                    <MenuItem disabled>Disabled Item</MenuItem>
-                </SubMenu>
+                <MenuItem>Menu Item</MenuItem>
+                <MenuItem disabled>Disabled Item</MenuItem>
             </Menu>
         </>
     )
@@ -52,5 +50,17 @@ const MenuOpen=()=>{
 
 storiesOf('Menu Component',module)
     .add('菜单类型',MenuType)
+    .add('单元格',()=>{
+        return(
+            <Menu mode={'horizontal'} celled defaultIndex='0'>
+                <MenuItem>Menu Item</MenuItem>
+                <MenuItem disabled>Disabled Item</MenuItem>
+                <SubMenu title='SubMenu'>
+                    <MenuItem>Menu Item</MenuItem>
+                    <MenuItem disabled>Disabled Item</MenuItem>
+                </SubMenu>
+            </Menu>
+        )
+    })
     .add('垂直菜单',MenuMode)
     .add('垂直菜单展开子项',MenuOpen)

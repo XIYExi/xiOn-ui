@@ -1,7 +1,7 @@
 import React, {Component, useState} from 'react';
 
 import Message from "./components/Message/message";
-import {Button, Table} from "./index";
+import {Button, Table, Zone} from "./index";
 import {AiFillStar, AiOutlineClose, AiOutlineHeart, AiOutlineStop} from "react-icons/ai";
 import Notice from "./components/Notice/Notice";
 import {Col, Row} from "./components/Grid";
@@ -44,28 +44,18 @@ const App:React.FC = () => {
     };
     return(
         <div style={{width:'50vw'}}>
-            <Table>
-                <Table.Header>
-                    <Table.Row>
-                        <Table.HeaderItem>Header1</Table.HeaderItem>
-                        <Table.HeaderItem>Header2</Table.HeaderItem>
-                        <Table.HeaderItem>Header3</Table.HeaderItem>
-                    </Table.Row>
-                </Table.Header>
-                <Table.Body>
-                    <Table.Row>
-                        <Table.Item>1</Table.Item>
-                        <Table.Item>2</Table.Item>
-                        <Table.Item>3</Table.Item>
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Item>1</Table.Item>
-                        <Table.Item>2</Table.Item>
-                        <Table.Item>3</Table.Item>
-                    </Table.Row>
-                </Table.Body>
-                <Table.Footer></Table.Footer>
-            </Table>
+            <Zone.Group>
+                <Zone>
+                    <div>hello</div>
+                </Zone>
+                <Zone>
+                    <div>hello</div>
+                </Zone>
+                <Zone>
+                    <div>hello</div>
+                </Zone>
+            </Zone.Group>
+
         </div>
     )
     

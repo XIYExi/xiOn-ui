@@ -1,0 +1,481 @@
+.lole-statistic {
+  &.statistic {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 1em 0em;
+    max-width: 100%;
+
+    + .lole-statistic.statistic {
+      margin: 0em 0em 0em 1.5em;
+    }
+
+    &:first-child {
+      margin-top: 0em;
+    }
+
+    &:last-child {
+      margin-bottom: 0em;
+    }
+  }
+
+  &.statistics {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    > .statistic {
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin: 0em 1.5em 2em;
+      max-width: 100%;
+    }
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 1em -1.5em -2em;
+
+    &:after {
+      display: block;
+      content: ' ';
+      height: 0px;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    &:first-child {
+      margin-top: 0em;
+    }
+
+    &:last-child {
+      margin-bottom: 0em;
+    }
+
+    .statistic > .value {
+      font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      font-size: 4rem;
+      font-weight: normal;
+      line-height: 1em;
+      color: #1B1C1D;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+
+  &.statistic > .value {
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    font-weight: normal;
+    line-height: 1em;
+    color: #1B1C1D;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &.statistics .statistic > .label, &.statistic > .label {
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.87);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &.statistics .statistic > .label ~ .value, &.statistic > .label ~ .value, &.statistics .statistic > .value ~ .label, &.statistic > .value ~ .label {
+    margin-top: 0rem;
+  }
+
+  &.statistics .statistic > .value .icon, &.statistic > .value .icon {
+    opacity: 1;
+    width: auto;
+    margin: 0em;
+  }
+
+  &.statistics .statistic > .text.value, &.statistic > .text.value {
+    line-height: 1em;
+    min-height: 2em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &.statistics .statistic > .text.value + .label, &.statistic > .text.value + .label {
+    text-align: center;
+  }
+
+  &.statistics .statistic > .value img, &.statistic > .value img {
+    max-height: 3rem;
+    vertical-align: baseline;
+  }
+
+  &.ten.statistics {
+    margin: 0em 0em -2em;
+
+    .statistic {
+      min-width: 10%;
+      margin: 0em 0em 2em;
+    }
+  }
+
+  &.nine.statistics {
+    margin: 0em 0em -2em;
+
+    .statistic {
+      min-width: 11.11111111%;
+      margin: 0em 0em 2em;
+    }
+  }
+
+  &.eight.statistics {
+    margin: 0em 0em -2em;
+
+    .statistic {
+      min-width: 12.5%;
+      margin: 0em 0em 2em;
+    }
+  }
+
+  &.seven.statistics {
+    margin: 0em 0em -2em;
+
+    .statistic {
+      min-width: 14.28571429%;
+      margin: 0em 0em 2em;
+    }
+  }
+
+  &.six.statistics {
+    margin: 0em 0em -2em;
+
+    .statistic {
+      min-width: 16.66666667%;
+      margin: 0em 0em 2em;
+    }
+  }
+
+  &.five.statistics {
+    margin: 0em 0em -2em;
+
+    .statistic {
+      min-width: 20%;
+      margin: 0em 0em 2em;
+    }
+  }
+
+  &.four.statistics {
+    margin: 0em 0em -2em;
+
+    .statistic {
+      min-width: 25%;
+      margin: 0em 0em 2em;
+    }
+  }
+
+  &.three.statistics {
+    margin: 0em 0em -2em;
+
+    .statistic {
+      min-width: 33.33333333%;
+      margin: 0em 0em 2em;
+    }
+  }
+
+  &.two.statistics {
+    margin: 0em 0em -2em;
+
+    .statistic {
+      min-width: 50%;
+      margin: 0em 0em 2em;
+    }
+  }
+
+  &.one.statistics {
+    margin: 0em 0em -2em;
+
+    .statistic {
+      min-width: 100%;
+      margin: 0em 0em 2em;
+    }
+  }
+
+  &.horizontal {
+    &.statistic {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    &.statistics {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin: 0em;
+      max-width: none;
+
+      .statistic {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        max-width: none;
+        margin: 1em 0em;
+      }
+    }
+
+    &.statistic > .text.value {
+      min-height: 0em !important;
+    }
+
+    &.statistics {
+      > .statistic > .text.value {
+        min-height: 0em !important;
+      }
+
+      .statistic > .value .icon {
+        width: 1.18em;
+      }
+    }
+
+    &.statistic > .value .icon {
+      width: 1.18em;
+    }
+
+    &.statistics .statistic > .value, &.statistic > .value {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &.statistics .statistic > .label, &.statistic > .label {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0em 0em 0em 0.75em;
+    }
+  }
+
+  &.primary.statistics .statistic > .value, &.statistics .primary.statistic > .value, &.primary.statistic > .value {
+    color: rgb(249, 204, 226);
+  }
+
+  &.orange.statistics .statistic > .value, &.statistics .orange.statistic > .value, &.orange.statistic > .value {
+    color: #fd7e14;
+  }
+
+  &.yellow.statistics .statistic > .value, &.statistics .yellow.statistic > .value, &.yellow.statistic > .value {
+    color: #fadb14;
+  }
+
+  &.red.statistics .statistic > .value, &.statistics .red.statistic > .value, &.red.statistic > .value {
+    color: #dc3545;
+  }
+
+  &.green.statistics .statistic > .value, &.statistics .green.statistic > .value, &.green.statistic > .value {
+    color: #52c41a;
+  }
+
+  &.teal.statistics .statistic > .value, &.statistics .teal.statistic > .value, &.teal.statistic > .value {
+    color: #20c997;
+  }
+
+  &.indigo.statistics .statistic > .value, &.statistics .indigo.statistic > .value, &.indigo.statistic > .value {
+    color: #6610f2;
+  }
+
+  &.purple.statistics .statistic > .value, &.statistics .purple.statistic > .value, &.purple.statistic > .value {
+    color: #6f42c1;
+  }
+
+  &.pink.statistics .statistic > .value, &.statistics .pink.statistic > .value, &.pink.statistic > .value {
+    color: #d63384;
+  }
+
+  &.cyan.statistics .statistic > .value, &.statistics .cyan.statistic > .value, &.cyan.statistic > .value {
+    color: #17a2b8;
+  }
+
+  &.gray.statistics .statistic > .value, &.statistics .gray.statistic > .value, &.gray.statistic > .value {
+    color: #767676;
+  }
+
+  &[class*="left floated"].statistic {
+    float: left;
+    margin: 0em 2em 1em 0em;
+  }
+
+  &[class*="right floated"].statistic {
+    float: right;
+    margin: 0em 0em 1em 2em;
+  }
+
+  &.floated.statistic:last-child {
+    margin-bottom: 0em;
+  }
+
+  &.mini {
+    &.statistics .statistic > .value, &.statistic > .value {
+      font-size: 1.5rem !important;
+    }
+
+    &.horizontal {
+      &.statistics .statistic > .value, &.statistic > .value {
+        font-size: 1.5rem !important;
+      }
+    }
+
+    &.statistics .statistic > .text.value, &.statistic > .text.value {
+      font-size: 1rem !important;
+    }
+  }
+
+  &.tiny {
+    &.statistics .statistic > .value, &.statistic > .value {
+      font-size: 2rem !important;
+    }
+
+    &.horizontal {
+      &.statistics .statistic > .value, &.statistic > .value {
+        font-size: 2rem !important;
+      }
+    }
+
+    &.statistics .statistic > .text.value, &.statistic > .text.value {
+      font-size: 1rem !important;
+    }
+  }
+
+  &.small {
+    &.statistics .statistic > .value, &.statistic > .value {
+      font-size: 3rem !important;
+    }
+
+    &.horizontal {
+      &.statistics .statistic > .value, &.statistic > .value {
+        font-size: 2rem !important;
+      }
+    }
+
+    &.statistics .statistic > .text.value, &.statistic > .text.value {
+      font-size: 1rem !important;
+    }
+  }
+
+  &.statistics .statistic > .value, &.statistic > .value {
+    font-size: 4rem !important;
+  }
+
+  &.horizontal {
+    &.statistics .statistic > .value, &.statistic > .value {
+      font-size: 3rem !important;
+    }
+  }
+
+  &.statistics .statistic > .text.value, &.statistic > .text.value {
+    font-size: 2rem !important;
+  }
+
+  &.large {
+    &.statistics .statistic > .value, &.statistic > .value {
+      font-size: 5rem !important;
+    }
+
+    &.horizontal {
+      &.statistics .statistic > .value, &.statistic > .value {
+        font-size: 4rem !important;
+      }
+    }
+
+    &.statistics .statistic > .text.value, &.statistic > .text.value {
+      font-size: 2.5rem !important;
+    }
+  }
+
+  &.huge {
+    &.statistics .statistic > .value, &.statistic > .value {
+      font-size: 6rem !important;
+    }
+
+    &.horizontal {
+      &.statistics .statistic > .value, &.statistic > .value {
+        font-size: 5rem !important;
+      }
+    }
+
+    &.statistics .statistic > .text.value, &.statistic > .text.value {
+      font-size: 2.5rem !important;
+    }
+  }
+}
+
+/* Grouped */
+
+/* Clearing */
+
+/*value*/
+
+/*label*/
+
+/* Top Label */
+
+/* Bottom Label */
+
+/*--------------
+   Icon Value
+---------------*/
+
+/*--------------
+   Text Value
+---------------*/
+
+/*--------------
+   Image Value
+---------------*/
+
+/*--------------
+      Count
+---------------*/
+
+/*--------------
+   Horizontal
+---------------*/
+
+/*color*/
+
+/*--------------
+    Floated
+---------------*/
+
+/*size*/
+/* Mini */
+
+/* Tiny */
+
+/* Small */
+
+/* Medium */
+
+/* Large */
+
+/* Huge */

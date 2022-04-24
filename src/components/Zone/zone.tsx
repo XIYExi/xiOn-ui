@@ -19,6 +19,7 @@ export interface BaseZoneProps{
     stacked?:boolean;
     textAlign?: textAlignType;
     vertical?: boolean;
+    listen?: boolean;
     [key:string]: any;
 }
 
@@ -47,6 +48,7 @@ const Zone:FC<BaseZoneProps> = (props) => {
         textAlign,
         vertical,
         style,
+        listen,
         ...restProps
     } = props
 
@@ -63,6 +65,7 @@ const Zone:FC<BaseZoneProps> = (props) => {
         'stacked': stacked,
         'vertical': vertical,
         'padded': padded,
+        'listen':listen,
         [`${attached===true ? '' : attached} attached`]: attached,
         [`${textAlign} aligned`]: textAlign,
         [`${floated} floated`]: floated,

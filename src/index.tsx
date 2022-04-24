@@ -40,6 +40,10 @@ export {default as Message} from './components/Message/index';
 
 export {default as Modal} from './components/Modal/index';
 
+export {default as MouseListener} from './components/MouseListener/index';
+
+export {default as Notice} from './components/Notice/index';
+
 export {default as Progress} from './components/Progress/index';
 
 export {Radio, RadioGroup} from './components/Radio/index';

@@ -15,6 +15,8 @@ export {default as Animator} from './components/Animator/index';
 
 export {default as AutoComplete} from './components/AutoComplete/index';
 
+export {default as Background} from './components/Background/index';
+
 export {default as Button} from './components/Button/index';
 
 export {default as Carousel} from './components/Carousel/index';

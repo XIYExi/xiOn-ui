@@ -27,12 +27,12 @@ storiesOf('Zone Component',module)
         const square = { width: 175, height: 175 }
         return(
             <>
-            <Zone circular style={square}>
-               <h2>Zone!</h2>
-            </Zone>
-            <Zone circular inverted style={square}>
-                <h2>Zone!</h2>
-            </Zone>
+                <Zone circular style={square}>
+                    <h2>Zone!</h2>
+                </Zone>
+                <Zone circular inverted style={square}>
+                    <h2>Zone!</h2>
+                </Zone>
             </>
         )
     })
@@ -184,4 +184,38 @@ storiesOf('Zone Component',module)
                 <Zone>Bottom</Zone>
             </Zone.Group>
         )
+    })
+    .add('预设斜角',()=>{
+        return(
+            <>
+                <Zone angle='lower-end'>
+                    Lower End[将拉伸区块右下角]
+                </Zone>
+                <Zone angle='lower-start'>
+                    Lower Start[将拉伸区块左下角]
+                </Zone>
+                <Zone angle='upper-end'>
+                    Upper End[将拉伸区块右上角]
+                </Zone>
+                <Zone angle='upper-start'>
+                    Upper Start[将拉伸左上角]
+                </Zone>
+                <Zone angle='upper-end-lower-end'>
+                    Upper End && Lower End[同时拉伸右上角和左下角]
+                </Zone>
+                <Zone angle='upper-end-lower-start'>
+                    Upper End && Lower Start[同时拉伸右上角和左下角]
+                </Zone>
+                <Zone angle='upper-start-lower-end'>
+                    Upper Start && Lower End[同时拉伸左上角和右下角]
+                </Zone>
+                <Zone angle='upper-start-lower-start'>
+                    Upper Start && Lower Start[同时拉伸左上角和右下角]
+                </Zone>
+            </>
+        )
+    },{
+        info:{
+            text:'使用angle预设斜角之后Zone区块将不再接受除了className和style之外的属性'
+        }
     })

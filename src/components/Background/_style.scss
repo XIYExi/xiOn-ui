@@ -1,0 +1,316 @@
+.lole-background {
+  &.background {
+    background: no-repeat center center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.img {
+    &.overlay.background:before {
+      background: rgba(30, 34, 40, 0.5);
+    }
+
+    &.overlay-400.background:before {
+      background: rgba(30, 34, 40, 0.4);
+    }
+
+    &.overlay-300.background:before {
+      background: rgba(30, 34, 40, 0.3);
+    }
+
+    &.overlay-light-300.background:before {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    &.overlay-light-400.background:before {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    &.overlay-light.background:before {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    &.background {
+      color: #fff !important;
+      --bs-text-opacity:1;
+      background-attachment: fixed !important;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &.dark.background {
+    --bs-dark-rgb:38, 43, 50;
+    --bs-bg-opacity:1;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+    color: #fff !important;
+  }
+
+  &.auto.background {
+    background-size: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll !important;
+  }
+
+  &.cover.background {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll !important;
+  }
+
+  &.full.background {
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll !important;
+  }
+
+  &.gradient-1.background {
+    background-image: linear-gradient(120deg, #f857a6 10%, #ef3f6e 100%);
+  }
+
+  &.gradient-2.background {
+    background-image: linear-gradient(40deg, #f5b161 0.4%, #ec366e 100.2%);
+  }
+
+  &.gradient-3.background {
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+  }
+
+  &.gradient-4.background {
+    background-image: linear-gradient(125deg, #9040db, #ff72c2 50%, #ffd84f);
+  }
+
+  &.gradient-5.background {
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  }
+
+  &.gradient-6.background {
+    background-image: linear-gradient(45deg, #08AEEA 0%, #2AF598 100%);
+  }
+
+  &.gradient-7.background {
+    background-image: linear-gradient(100deg, #0093e9 0, #80d0c7 95%);
+  }
+
+  &.gradient-8.background {
+    background-image: linear-gradient(45deg, #ffdee9, #b5fffc);
+  }
+
+  &.gradient-6.background, &.gradient-7.background {
+    background-size: 130% auto;
+  }
+
+  &.primary.gradient.background {
+    background: linear-gradient(180deg, rgba(249, 204, 226, 0.7), rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.orange.gradient.background {
+    background: linear-gradient(180deg, rgba(253, 126, 20, 0.3), rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.red.gradient.background {
+    background: linear-gradient(180deg, rgba(253, 53, 69, 0.3), rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.yellow.gradient.background {
+    background: linear-gradient(180deg, rgba(250, 219, 20, 0.5), rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.green.gradient.background {
+    background: linear-gradient(180deg, rgba(82, 196, 26, 0.3), rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.indigo.gradient.background {
+    background: linear-gradient(180deg, rgba(102, 16, 242, 0.3), rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.purple.gradient.background {
+    background: linear-gradient(180deg, rgba(111, 66, 193, 0.4), rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.teal.gradient.background {
+    background: linear-gradient(180deg, rgba(32, 201, 151, 0.4), rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.pink.gradient.background {
+    background: linear-gradient(180deg, rgba(214, 51, 132, 0.3), rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.cyan.gradient.background {
+    background: linear-gradient(180deg, rgba(23, 162, 184, 0.3), rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.primary.color.background {
+    background-color: rgba(249, 204, 226, 0.3);
+  }
+
+  &.orange.color.background {
+    background-color: rgba(253, 126, 20, 0.15);
+  }
+
+  &.red.color.background {
+    background-color: rgba(253, 53, 69, 0.15);
+  }
+
+  &.yellow.color.background {
+    background-color: rgba(250, 219, 20, 0.15);
+  }
+
+  &.green.color.background {
+    background-color: rgba(82, 196, 26, 0.1);
+  }
+
+  &.indigo.color.background {
+    background-color: rgba(102, 16, 242, 0.1);
+  }
+
+  &.purple.color.background {
+    background-color: rgba(111, 66, 193, 0.2);
+  }
+
+  &.teal.color.background {
+    background-color: rgba(32, 201, 151, 0.1);
+  }
+
+  &.pink.color.background {
+    background-color: rgba(214, 51, 132, 0.15);
+  }
+
+  &.cyan.color.background {
+    background-color: rgba(23, 162, 184, 0.1);
+  }
+
+  &.white.color.background {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  &.sky.color.background {
+    background-color: rgba(94, 185, 240, 0.2);
+  }
+
+  &.leaf.color.background {
+    background-color: rgba(124, 183, 152, 0.5);
+  }
+
+  &.video.background {
+    position: relative;
+    overflow: hidden;
+
+    .container {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+    }
+  }
+
+  &.overlay {
+    &.video.background:after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(30, 34, 40, 0.4);
+      z-index: 1;
+    }
+
+    &.gradient.video.background {
+      opacity: 0.4;
+      background: linear-gradient(120deg, #542461 20%, #332487 100%) !important;
+    }
+  }
+}
+
+/*默认为0.5*/
+
+/*img mode*/
+
+/*dark mode*/
+
+/* 裁剪 cropper */
+
+/*渐变预设*/
+
+/*渐变主题色*/
+
+/*color 色彩背景*/
+
+/*video*/
+
+/*关闭容器和拖动条，使其完全融入背景*/
+
+.video-wrapper video {
+  &::-webkit-media-slider-thumb, &::-webkit-media-slider-container {
+    display: none !important;
+  }
+}
+
+/*比例*/
+
+.lole-background.ratio {
+  &.video.background {
+    position: relative;
+    width: 100%;
+
+    &::before {
+      display: block;
+      padding-top: var(--bs-aspect-ratio);
+      content: "";
+    }
+
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.ratio-1x1.video.background {
+    --bs-aspect-ratio:100%;
+  }
+
+  &.ratio-4x3.video.background {
+    --bs-aspect-ratio:calc(3 / 4 * 100%);
+  }
+
+  &.ratio-16x9.video.background {
+    --bs-aspect-ratio:calc(9 / 16 * 100%);
+  }
+
+  &.ratio-21x9.video.background {
+    --bs-aspect-ratio:calc(9 / 21 * 100%);
+  }
+}
+
+/*缩放比例*/

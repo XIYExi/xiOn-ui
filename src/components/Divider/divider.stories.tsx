@@ -2,6 +2,7 @@ import React from "react";
 import '../../styles/index.scss';
 import {storiesOf} from "@storybook/react";
 import Divider from "./divider";
+import {Zone} from "../../index";
 
 const DividerBase = () => {
     return(
@@ -121,3 +122,34 @@ storiesOf('Divider Component',module)
     .add('带文字的分割线',DividerWithText)
     .add('垂直分割线',DividerVertical)
     .add('分割文字使用正文样式',DividerPlain)
+    .add('svg',()=>{
+        return(
+            <>
+                <Zone>
+                    <Divider svg='concave'>
+                        <Zone basic textAlign='center'>凹面</Zone>
+                    </Divider>
+                </Zone>
+                <Zone>
+                    <Divider svg='convex'>
+                        <Zone basic textAlign='center'>凸面</Zone>
+                    </Divider>
+                </Zone>
+                <Zone>
+                    <Divider svg='wave1'>
+                        <Zone basic textAlign='center'>波浪1</Zone>
+                    </Divider>
+                </Zone>
+                <Zone>
+                    <Divider svg='wave2'>
+                        <Zone basic textAlign='center'>波浪2</Zone>
+                    </Divider>
+                </Zone>
+                <Zone>
+                    <Divider svg='wave3'>
+                        <Zone basic textAlign='center'>波浪3</Zone>
+                    </Divider>
+                </Zone>
+            </>
+        )
+    })

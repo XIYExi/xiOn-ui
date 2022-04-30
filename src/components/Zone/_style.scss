@@ -23,6 +23,19 @@
     }
   }
 
+  /*预设*/
+  &.zone > .img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    --bs-text-opacity: 1;
+    color: #343f52 !important;
+    font-size: calc(1.265rem + 0.18vw);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
   &.vertical.zone {
     margin: 0;
     padding-left: 0;

@@ -7,8 +7,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
-
-
 export {default as Alert} from './components/Alert/index';
 
 export {default as Animator} from './components/Animator/index';
@@ -46,6 +44,8 @@ export {default as Modal} from './components/Modal/index';
 export {default as MouseListener} from './components/MouseListener/index';
 
 export {default as Notice} from './components/Notice/index';
+
+export {default as Placeholder} from './components/Placeholder/index';
 
 export {default as Progress} from './components/Progress/index';
 

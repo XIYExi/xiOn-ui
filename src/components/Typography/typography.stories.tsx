@@ -4,6 +4,8 @@ import React from "react";
 import Mark from "./mark";
 import Text from "./text";
 import {Zone} from "../../index";
+import Link from "./link";
+import Blockquote from "./blockquote";
 
 storiesOf('Typography Component',module)
     .add('下划线',()=>{
@@ -111,5 +113,59 @@ storiesOf('Typography Component',module)
                 </Zone>
             </Zone.Group>
 
+        )
+    })
+    .add('超链接',()=>{
+        return(
+            <>
+                <Zone stacked color='primary'>
+                    <Link href='#' hover style={{color: '#5eb9f0'}}>Link example</Link>
+                    <Link href='#' hover>Link example</Link>
+                    <Link href='#' hover more>Link example</Link>
+                </Zone>
+
+                <Zone stacked color='primary'>
+                    <Link href='#' hover='type2' color='sky'>Link example</Link>
+                    <Link href='#' hover='type2' >Link example</Link>
+                    <Link href='#' hover='type2' more>Link example</Link>
+                </Zone>
+
+                <Zone stacked color='primary'>
+                    <Link href='#' hover='type3' color='leaf'>Link example</Link>
+                    <Link href='#' hover='type3'>Link example</Link>
+                    <Link href='#' hover='type3' more>Link example</Link>
+                </Zone>
+
+            </>
+        )
+    })
+    .add('文本区域块',()=>{
+        return(
+            <Zone.Group>
+                <Zone basic={true}>
+                    <Blockquote footer footerContent='Love Letter UI'>
+                        <p style={{lineHeight: 1.5,fontSize: '16px'}}>
+                            你知道吗？
+                            母猪产后护理，首先要从产前做起，
+                            母猪产前四五天要逐渐减少饲喂量，
+                            其目的是减少腹部压力产前吃得少产后才能吃得多。
+                            若产前吃得多，不仅会使产程过长，还会造成产后胃积食。
+                            你不知道，你只关心你的袋鼠。
+                        </p>
+                    </Blockquote>
+                </Zone>
+                <Zone basic>
+                    <Blockquote icon>
+                        <p style={{lineHeight: 1.5,fontSize: '16px'}}>
+                            你知道吗？
+                            母猪产后护理，首先要从产前做起，
+                            母猪产前四五天要逐渐减少饲喂量，
+                            其目的是减少腹部压力产前吃得少产后才能吃得多。
+                            若产前吃得多，不仅会使产程过长，还会造成产后胃积食。
+                            你不知道，你只关心你的袋鼠。
+                        </p>
+                    </Blockquote>
+                </Zone>
+            </Zone.Group>
         )
     })

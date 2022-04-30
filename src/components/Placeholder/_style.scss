@@ -1,0 +1,252 @@
+.lole-placeholder {
+  &.placeholder {
+    position: static;
+    overflow: hidden;
+    -webkit-animation: placeholderShimmer 2s linear;
+    animation: placeholderShimmer 2s linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    background-color: #FFFFFF;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.08)), color-stop(15%, rgba(0, 0, 0, 0.15)), color-stop(30%, rgba(0, 0, 0, 0.08)));
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.15) 15%, rgba(0, 0, 0, 0.08) 30%);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.15) 15%, rgba(0, 0, 0, 0.08) 30%);
+    background-size: 1200px 100%;
+    max-width: 30rem;
+
+    + .lole-placeholder.placeholder {
+      margin-top: 2rem;
+      -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s;
+
+      + .lole-placeholder.placeholder {
+        -webkit-animation-delay: 0.3s;
+        animation-delay: 0.3s;
+
+        + .lole-placeholder.placeholder {
+          -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+
+          + .lole-placeholder.placeholder {
+            -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+          }
+        }
+      }
+    }
+
+    background-color: #FFFFFF;
+
+    > :before, .image.header:after {
+      background-color: #FFFFFF;
+    }
+
+    .line {
+      background-color: #FFFFFF;
+
+      &:after {
+        background-color: #FFFFFF;
+      }
+    }
+
+    .image:not(.header):not(.ui) {
+      height: 100px;
+    }
+
+    .square.image:not(.header) {
+      height: 0px;
+      overflow: hidden;
+
+      /* 1/1 aspect ratio */
+      padding-top: 100%;
+    }
+
+    .rectangular.image:not(.header) {
+      height: 0px;
+      overflow: hidden;
+
+      /* 4/3 aspect ratio */
+      padding-top: 75%;
+    }
+
+    .line {
+      position: relative;
+      height: 0.85714286em;
+
+      &:before, &:after {
+        top: 100%;
+        position: absolute;
+        content: '';
+        background-color: inherit;
+      }
+
+      &:before {
+        left: 0px;
+      }
+
+      &:after {
+        right: 0px;
+      }
+
+      margin-bottom: 0.5em;
+
+      &:before, &:after {
+        height: 0.5em;
+      }
+
+      &:not(:first-child) {
+        margin-top: 0.5em;
+      }
+    }
+
+    .header {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .line {
+      &:nth-child(1):after {
+        width: 0%;
+      }
+
+      &:nth-child(2):after {
+        width: 50%;
+      }
+
+      &:nth-child(3):after {
+        width: 10%;
+      }
+
+      &:nth-child(4):after {
+        width: 35%;
+      }
+
+      &:nth-child(5):after {
+        width: 65%;
+      }
+    }
+
+    .header .line {
+      margin-bottom: 0.64285714em;
+
+      &:before, &:after {
+        height: 0.64285714em;
+      }
+
+      &:not(:first-child) {
+        margin-top: 0.64285714em;
+      }
+
+      &:after {
+        width: 20%;
+      }
+
+      &:nth-child(2):after {
+        width: 60%;
+      }
+    }
+
+    .image {
+      &.header {
+        .line {
+          margin-left: 3em;
+
+          &:before {
+            width: 0.71428571rem;
+          }
+        }
+
+        &:after {
+          display: block;
+          height: 0.85714286em;
+          content: '';
+          margin-left: 3em;
+        }
+      }
+
+      .line:first-child {
+        height: 0.01px;
+      }
+    }
+
+    .paragraph .line:first-child, .header .line:first-child {
+      height: 0.01px;
+    }
+
+    .image:not(:first-child):before, .paragraph:not(:first-child):before, .header:not(:first-child):before {
+      height: 1.42857143em;
+      content: '';
+      display: block;
+    }
+  }
+
+  &.inverted.placeholder {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.08)), color-stop(15%, rgba(255, 255, 255, 0.14)), color-stop(30%, rgba(255, 255, 255, 0.08)));
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.14) 15%, rgba(255, 255, 255, 0.08) 30%);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.14) 15%, rgba(255, 255, 255, 0.08) 30%);
+    background-color: #1B1C1D;
+
+    > :before, .image.header:after {
+      background-color: #1B1C1D;
+    }
+
+    .line {
+      background-color: #1B1C1D;
+
+      &:after {
+        background-color: #1B1C1D;
+      }
+    }
+  }
+
+  &.placeholder {
+    .full.line.line.line:after {
+      width: 0%;
+    }
+
+    .long.line.line.line:after {
+      width: 35%;
+    }
+
+    .medium.line.line.line:after {
+      width: 50%;
+    }
+
+    .short.line.line.line:after {
+      width: 65%;
+    }
+  }
+
+  &.fluid.placeholder {
+    max-width: none;
+  }
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -1200px 0;
+  }
+
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
+/* Image */
+
+/* Lines */
+
+/* Any Lines */
+
+/* Header Image + 2 Lines */
+
+/* Line Outdent */
+
+/* Header Line 1 & 2*/
+
+/* Image Header */
+
+/* Spacing */
+
+/*invert*/
+
+/*fiuld*/

@@ -5,7 +5,7 @@ import Icon, {ThemeProps} from "../Icon/icon";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-library.add(fas);
+/*library.add(fas);*/
 
 const Meta = styled.div`
   color: #666;

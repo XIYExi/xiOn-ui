@@ -6,7 +6,7 @@ import {library} from "@fortawesome/fontawesome-svg-core";
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import InputNumber from "./input_number";
 import Input from "../Input/input";
-library.add(fas);
+/*library.add(fas);*/
 
 const InputNumberBase=()=>{
     return(

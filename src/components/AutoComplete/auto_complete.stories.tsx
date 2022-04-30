@@ -5,6 +5,7 @@ import {library} from "@fortawesome/fontawesome-svg-core";
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import AutoComplete, {DataSourceType} from "./auto_complete";
 import styled from "styled-components";
+// @ts-ignore
 library.add(fas);
 
 const TP = styled.p`

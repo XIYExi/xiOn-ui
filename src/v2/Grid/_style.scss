@@ -1,0 +1,232 @@
+.lole {
+  &.grid{
+    display: flex;
+    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    padding: 0em;
+
+    /*默认间距*/
+    margin: -1rem;
+
+    & + .grid{
+      /*拉开间距， 防止下一个grid过于紧凑*/
+      margin-top: 1rem;
+    }
+
+    & > *{
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    & > .lole.grid:first-child{
+      margin-top: 0;
+    }
+    & > .lole.grid:last-child{
+      margin-bottom: 0;
+    }
+
+    //关于zone的设置
+    & .aligned.row > .column > .zone:not(.compat):not(.attached){
+      width: 100%;
+    }
+
+    & .row + .lole.divider{
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      margin: 1rem 1rem;
+    }
+
+    & .column + .lole.vertical.divider {
+      height: calc(50% - (2rem / 2));
+    }
+
+    & > .row > .column:last-child > .horizontal.zone,
+    & > .column:last-child > .horizontal.zone{
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+  }
+
+  &.aligned.grid {
+    & .column > .zone:not(.compat):not(.attached){
+      width: 100%;
+    }
+  }
+
+
+  /*标准16栅格*/
+  /*
+  grid           grid
+    row            column
+      column
+  */
+  &.grid > .column:not(.row),
+  &.grid > .row > .column {
+    position: relative;
+    display: inline-block;
+    width: 6.25%; // (100 / 16) , 默认每一栅格为6.25%
+    padding-left: 1rem;
+    padding-right: 1rem;
+    vertical-align: top;
+  }
+
+
+  &.grid > .row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: inherit;
+    -ms-flex-pack: inherit;
+    justify-content: inherit;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100% !important;
+
+    // 设置row的padding间距
+    padding: 1rem 0 1rem 0;
+  }
+
+  &.grid > .column:not(.row){
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  &.grid > .row > .column {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &.grid > .row > img,
+  &.grid > .row > .column > img {
+    max-width: 100%;
+  }
+
+  //只有一个column
+  &.grid > .column:only-child,
+  &.grid > .row > .column:only-child{
+    width: 100%;
+  }
+
+  &[class*='one column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 100%;
+    }
+  }
+
+  &[class*='two column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 50%;
+    }
+  }
+
+  &[class*='three column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 33.33333333%;
+    }
+  }
+
+  &[class*='four column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 25%;
+    }
+  }
+
+
+
+}
+
+
+/*media*/
+@media only screen and (max-width: 767px) {
+  .lole.page.grid {
+    width: auto;
+    padding-left: 0em;
+    padding-right: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .lole.page.grid {
+    width: auto;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .lole.page.grid {
+    width: auto;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  .lole.page.grid {
+    width: auto;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .lole.page.grid {
+    width: auto;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 23%;
+    padding-right: 23%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -120,6 +120,13 @@
     width: 100%;
   }
 
+
+  /*
+   写法:
+  lole * column grid
+    row
+     column
+   */
   &[class*='one column'].grid {
     & > .row > .column,
     & > .column:not(.row){
@@ -146,6 +153,105 @@
     & > .column:not(.row){
       width: 25%;
     }
+  }
+
+  &[class*='five column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 20%;
+    }
+  }
+
+  &[class*='six column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 16.66666667%;
+    }
+  }
+
+  &[class*='seven column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 14.28571429%;
+    }
+  }
+
+  &[class*='eight column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 12.5%;
+    }
+  }
+
+  &[class*='nine column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 11.11111111%;
+    }
+  }
+
+  &[class*='ten column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 10%;
+    }
+  }
+
+  &[class*='eleven column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 9.09090909%;
+    }
+  }
+
+  &[class*='twelve column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 8.33333333%;
+    }
+  }
+
+  &[class*='thirteen column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 7.69230769%;
+    }
+  }
+
+  &[class*='fourteen column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 7.14285714%;
+    }
+  }
+
+  &[class*='fifteen column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 6.66666667%;
+    }
+  }
+
+  &[class*='sixteen column'].grid {
+    & > .row > .column,
+    & > .column:not(.row){
+      width: 6.25%;
+    }
+  }
+
+  /**
+  写法:
+  lole grid
+    * column row
+      column
+   */
+  &.grid{
+    & > [class*='one column'].row > .column {
+      width: 100% !important;
+    }
+
+
+
   }
 
 

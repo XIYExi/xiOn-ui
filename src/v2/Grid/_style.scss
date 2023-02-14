@@ -1452,6 +1452,11 @@
 }
 
 
+
+
+
+
+
 /*
 ============
 Reverse Order
@@ -1665,6 +1670,10 @@ Reverse Order
 }
 
 
+
+
+
+
 /*
 ===========
 Double
@@ -1867,9 +1876,87 @@ Double
     &.grid > [class*="sixteen column"].doubling:not(.stackable).row.row > .column {
       width: 25% !important;
     }
-
   }
 }
+
+
+
+
+/*
+===========
+Stackable
+=============
+*/
+@media only screen and (max-width: 767px){
+
+  .lole{
+
+    &.container {
+      & > .lole.stackable.grid > .column,
+      & > .lole.stackable.grid > .row > .column {
+        padding-left: 0em !important;
+        padding-right: 0em !important;
+      }
+    }
+
+    &.zone:not(.vertical) .lole.stackable.page.grid{
+      margin-left: -1rem !important;
+      margin-right: -1rem !important;
+    }
+
+
+    &.grid {
+      & .lole.stackable.grid{
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+      }
+    }
+
+    &.grid > .stackable.stackable.row > .column{
+      width: 100% !important;
+      margin: 0em 0em !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      padding: 1rem 1rem !important;
+    }
+
+
+    &.stackable.divided.grid > .row:first-child > .column:first-child,
+    &.stackable.celled.grid > .row:first-child > .column:first-child,
+    &.stackable.divided.grid > .column:not(.row):first-child,
+    &.stackable.celled.grid > .column:not(.row):first-child {
+      border-top: none !important;
+    }
+    &.inverted.stackable.celled.grid > .column:not(.row),
+    &.inverted.stackable.divided.grid > .column:not(.row),
+    &.inverted.stackable.celled.grid > .row > .column,
+    &.inverted.stackable.divided.grid > .row > .column {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    &.stackable.celled.grid > .column:not(.row),
+    &.stackable.divided:not(.vertically).grid > .column:not(.row),
+    &.stackable.celled.grid > .row > .column,
+    &.stackable.divided:not(.vertically).grid > .row > .column {
+      border-top: 1px solid rgba(34, 36, 38, 0.15);
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+    }
+    &.stackable.celled.grid > .row {
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+    &.stackable.divided:not(.vertically).grid > .column:not(.row),
+    &.stackable.divided:not(.vertically).grid > .row > .column {
+      padding-left: 0em !important;
+      padding-right: 0em !important;
+    }
+
+  }
+
+}
+
 
 
 

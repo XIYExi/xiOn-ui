@@ -17,6 +17,9 @@ export type TTextAlign =
 export type TVertical =  'top' | 'middle' | 'bottom';
 
 
+export type TFloated = 'left' | 'right'
+
+
 export type GridReversedProp =
     | string
     | 'computer'

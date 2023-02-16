@@ -4,6 +4,7 @@ import {CommonInterface} from "../type";
 import {GridOnlyProp, GridReversedProp, SemanticWIDTHS, TTextAlign, TVertical} from "./type";
 import {useMultipleProp, useWidthProp} from "../utils";
 import classnames from "classnames";
+import {useTextAlignProp, useVerticalAlignProp} from "../use";
 
 
 interface IRow extends CommonInterface {
@@ -45,15 +46,15 @@ const Row:FC<IRow> = (props) => {
         ...restProps
     } = props;
 
-    const classname = classnames('lole', {
+    const classname = classnames( {
             'centered': centered,
             'divided': divided,
             'stretched': stretched,
-            [`${textAlign} aligned`]:textAlign,
-            [`${verticalAlign} aligned`]: verticalAlign,
         },
         useMultipleProp(only, 'only'),
         useMultipleProp(reversed, 'reversed'),
+        useTextAlignProp(textAlign),
+        useVerticalAlignProp(verticalAlign),
         useWidthProp(columns, 'columns', true),
         'row',
         className

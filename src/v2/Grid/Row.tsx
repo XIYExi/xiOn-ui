@@ -1,10 +1,19 @@
 import React, {FC} from "react";
-import classNames from "classnames";
 import {CommonInterface} from "../type";
-import {GridOnlyProp, GridReversedProp, SemanticWIDTHS, TTextAlign, TVertical} from "./type";
-import {useMultipleProp, useWidthProp} from "../utils";
+import {
+    GridOnlyProp,
+    GridReversedProp,
+    SemanticWIDTHS,
+    TTextAlign,
+    TVertical
+} from "./type";
 import classnames from "classnames";
-import {useTextAlignProp, useVerticalAlignProp} from "../use";
+import {
+    handleMultipleProp,
+    handleTextAlignProp,
+    handleVerticalAlignProp,
+    handleWidthProp
+} from "../use";
 
 
 interface IRow extends CommonInterface {
@@ -51,11 +60,11 @@ const Row:FC<IRow> = (props) => {
             'divided': divided,
             'stretched': stretched,
         },
-        useMultipleProp(only, 'only'),
-        useMultipleProp(reversed, 'reversed'),
-        useTextAlignProp(textAlign),
-        useVerticalAlignProp(verticalAlign),
-        useWidthProp(columns, 'columns', true),
+        handleMultipleProp(only, 'only'),
+        handleMultipleProp(reversed, 'reversed'),
+        handleTextAlignProp(textAlign),
+        handleVerticalAlignProp(verticalAlign),
+        handleWidthProp(columns, 'columns', true),
         'row',
         className
     );

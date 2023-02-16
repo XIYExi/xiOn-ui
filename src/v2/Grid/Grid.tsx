@@ -1,9 +1,20 @@
-import React, {FC} from "react";
+import React from "react";
 import classnames from 'classnames';
 import {CommonInterface} from "../type";
-import {GridReversedProp, SemanticWIDTHS, TTextAlign, TVertical} from "./type";
-import {useMultipleProp, useWidthProp} from "../utils";
-import {useKeyOrValueAndKey, useTextAlignProp, useVerticalAlignProp} from "../use";
+import {
+    GridReversedProp,
+    SemanticWIDTHS,
+    TTextAlign,
+    TVertical
+} from "./type";
+
+import {
+    handleKeyOrValueAndKey,
+    handleMultipleProp,
+    handleTextAlignProp,
+    handleVerticalAlignProp,
+    handleWidthProp
+} from "../use";
 import Column from "./Column";
 import Row from './Row';
 
@@ -78,13 +89,13 @@ const Grid: GridComponent = (props) => {
             'stackable': stackable,
             'stretched': stretched,
         },
-        useKeyOrValueAndKey(celled, 'celled'),
-        useKeyOrValueAndKey(divided, 'divided'),
-        useKeyOrValueAndKey(padded, 'padded'),
-        useMultipleProp(reversed, 'reversed'),
-        useTextAlignProp(textAlign),
-        useVerticalAlignProp(verticalAlign),
-        useWidthProp(columns, 'column', true),
+        handleKeyOrValueAndKey(celled, 'celled'),
+        handleKeyOrValueAndKey(divided, 'divided'),
+        handleKeyOrValueAndKey(padded, 'padded'),
+        handleMultipleProp(reversed, 'reversed'),
+        handleTextAlignProp(textAlign),
+        handleVerticalAlignProp(verticalAlign),
+        handleWidthProp(columns, 'column', true),
         'grid',
         className
     );

@@ -1,13 +1,4 @@
-export const useMultipleProp = (val:any, key:any) => {
-    if (!val || val === true) return null
 
-    return val
-        .replace('large screen', 'large-screen')
-        .replace(/ vertically/g, '-vertically')
-        .split(' ')
-        .map((prop:string) => `${prop.replace('-', ' ')} ${key}`)
-        .join(' ')
-}
 
 export const numberToWordMap = {
     1: 'one',
@@ -38,15 +29,3 @@ export function numberToWord(value: any) {
     return ''
 }
 
-
-
-export const useWidthProp = (val: any, widthClass = '', canEqual = false) => {
-    if (canEqual && val === 'equal') {
-        return 'equal width'
-    }
-    const valType = typeof val
-    if ((valType === 'string' || valType === 'number') && widthClass) {
-        return `${numberToWord(val)} ${widthClass}`
-    }
-    return numberToWord(val)
-}

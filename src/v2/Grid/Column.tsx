@@ -1,9 +1,19 @@
 import React, {FC} from "react";
 import classnames from 'classnames';
 import {CommonInterface} from "../type";
-import {GridOnlyProp, SemanticWIDTHS, TFloated, TTextAlign, TVertical} from "./type";
-import {useMultipleProp, useWidthProp} from "../utils";
-import {useTextAlignProp, useVerticalAlignProp} from "../use";
+import {
+    GridOnlyProp,
+    SemanticWIDTHS,
+    TFloated,
+    TTextAlign,
+    TVertical
+} from "./type";
+import {
+    handleMultipleProp,
+    handleTextAlignProp,
+    handleVerticalAlignProp,
+    handleWidthProp
+} from "../use";
 
 
 interface IColumn extends CommonInterface {
@@ -61,15 +71,15 @@ const Column:FC<IColumn> = (props) => {
             'stretched': stretched,
             [`${floated} floated`]: floated,
         },
-        useMultipleProp(only,'only'),
-        useWidthProp(computer, 'wide computer'),
-        useWidthProp(largeScreen, 'wide large screen'),
-        useWidthProp(mobile, 'wide mobile'),
-        useWidthProp(tablet, 'wide tablet'),
-        useWidthProp(widescreen, 'wide widescreen'),
-        useWidthProp(width, 'wide'),
-        useTextAlignProp(textAlign),
-        useVerticalAlignProp(verticalAlign),
+        handleMultipleProp(only,'only'),
+        handleWidthProp(computer, 'wide computer'),
+        handleWidthProp(largeScreen, 'wide large screen'),
+        handleWidthProp(mobile, 'wide mobile'),
+        handleWidthProp(tablet, 'wide tablet'),
+        handleWidthProp(widescreen, 'wide widescreen'),
+        handleWidthProp(width, 'wide'),
+        handleTextAlignProp(textAlign),
+        handleVerticalAlignProp(verticalAlign),
         'column',
         className
     );

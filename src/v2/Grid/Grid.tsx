@@ -4,6 +4,8 @@ import {CommonInterface} from "../type";
 import {GridReversedProp, SemanticWIDTHS, TTextAlign, TVertical} from "./type";
 import {useMultipleProp, useWidthProp} from "../utils";
 import {useKeyOrValueAndKey, useTextAlignProp, useVerticalAlignProp} from "../use";
+import Column from "./Column";
+import Row from './Row';
 
 
 interface IGrid extends CommonInterface {
@@ -37,7 +39,13 @@ interface IGrid extends CommonInterface {
     [key:string]: any;
 }
 
-const Grid:FC<IGrid> = (props) => {
+interface GridComponent extends React.FC<IGrid> {
+    Column: typeof Column;
+    Row: typeof Row;
+}
+
+
+const Grid: GridComponent = (props) => {
 
     const {
         id,
@@ -94,5 +102,8 @@ const Grid:FC<IGrid> = (props) => {
         </React.Fragment>
     )
 }
+
+Grid.Column = Column;
+Grid.Row = Row;
 
 export default Grid;

@@ -108,6 +108,7 @@ const AlertLoop = () => {
     )
 }
 
+
 storiesOf('Alert Component',module)
     .add('基本使用',AlertBasic)
     .add('四种类型',AlertTheme)

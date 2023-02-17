@@ -8,8 +8,10 @@ const defaultProps = {
 
 describe('test Button component', ()=>{
     it('should render the correct default button',()=>{
+        // eslint-disable-next-line testing-library/render-result-naming-convention
         const wrapper = render(<Button {...defaultProps}>Click Me</Button>);
         expect(wrapper).toBeInTheDocument();
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         const element = wrapper.getByText("Click Me");
         expect(element).toBeInTheDocument();
         expect(element.tagName).toEqual('BUTTON');

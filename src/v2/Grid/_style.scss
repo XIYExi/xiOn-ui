@@ -160,7 +160,7 @@
     }
   }
 
-  &.inverted.divided.grid([class*="vertically divided"]){
+  &.inverted.divided.grid:not([class*="vertically divided"]){
     & > .column:not(.row),
     & > .row > .column {
       -webkit-box-shadow: -1px 0px 0px 0px rgba(255, 255, 255, 0.1);
